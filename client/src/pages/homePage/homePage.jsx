@@ -9,8 +9,9 @@ const navbarItems = [
     link: "prices",
     type: "text",
     items: [
-      { name: "Pris 1", link: "prices", type: "text" },
-      { name: "Pris 2", link: "prices", type: "text" },
+      { name: "Individuell", link: "prices", type: "text" },
+      { name: "Familie", link: "prices", type: "text" },
+      { name: "Arbeidsplass", link: "prices", type: "text" },
     ],
   },
   { name: "Ta en prat", link: "contact", type: "button" },

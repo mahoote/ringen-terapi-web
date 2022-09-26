@@ -1,15 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ButtonStyled } from "../button/button.style";
 
 function NavbarItem(props) {
   const item = props.item;
 
   if (item.type === "text" && item.items === undefined) {
-    return <a className="navbar-item">{item.name}</a>;
+    return (
+      <Link className="navbar-item" to={item.link}>
+        <p>{item.name}</p>
+      </Link>
+    );
   } else if (item.type === "text" && item.items !== undefined) {
     return (
       <div className="navbar-item has-dropdown is-hoverable">
-        <a className="navbar-link">{item.name}</a>
+        <Link className="navbar-item" to={item.link}>
+          <p>{item.name}</p>
+        </Link>
 
         <div className="navbar-dropdown">
           {item.items.map((item, i) => (
@@ -20,9 +27,9 @@ function NavbarItem(props) {
     );
   } else if (item.type === "button") {
     return (
-      <div className="navbar-item">
-        <button className={"button"}>{item.name}</button>
-      </div>
+      <Link className="navbar-item" to={item.link}>
+        <ButtonStyled value={item.name} borderWidth={"3px"} />
+      </Link>
     );
   }
 
@@ -38,7 +45,7 @@ function Header(props) {
     >
       <div className="navbar-brand">
         <Link to={"/"}>
-          <p className={"is-size-2"}>Ringen Terapi</p>
+          <p className={"is-size-2-desktop is-size-4-touch"}>Ringen Terapi</p>
         </Link>
 
         <a

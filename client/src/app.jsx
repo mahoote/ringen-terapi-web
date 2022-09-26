@@ -7,6 +7,7 @@ export function App() {
     <BrowserRouter>
       <Routes>
         <Route path={"/"} element={<HomePageStyled />} />
+        <Route path={"/*"} element={<h1>Error page</h1>} />
       </Routes>
     </BrowserRouter>
   );
