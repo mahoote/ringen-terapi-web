@@ -3,11 +3,14 @@ import { useTextWeight } from "../../hooks/text";
 
 function Text(props) {
   const size = props.size;
+  const sizeDesktop = props.sizeDesktop;
   const sizeTouch = props.sizeTouch;
   const sizeTablet = props.sizeTablet;
   const sizeMobile = props.sizeMobile;
 
   const sizeClass = ` is-size-${size} `;
+  const sizeDesktopClass =
+    sizeDesktop !== undefined ? ` is-size-${sizeDesktop}-desktop ` : "";
   const sizeTouchClass =
     sizeTouch !== undefined ? ` is-size-${sizeTouch}-touch ` : "";
   const sizeTabletClass =
@@ -22,6 +25,7 @@ function Text(props) {
       className={
         props.className +
         sizeClass +
+        sizeDesktopClass +
         sizeTouchClass +
         sizeTabletClass +
         sizeMobileClass +
