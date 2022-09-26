@@ -4,6 +4,8 @@ import { ButtonStyled } from "../button/button.style";
 import { NavbarLinkStyled, NavbarLinkUnderlineStyled } from "./header.style";
 import { TextStyled } from "../text/text.style";
 import { standardColors } from "../../palettes/standardColors.style";
+import { MenuBurgerStyled } from "../menuBurger/menuBurger.style";
+import { MobileMenuStyled } from "../mobileMenu/mobileMenu.style";
 
 function NavbarLinkUnderline(props) {
   return <span className={props.className}></span>;
@@ -66,43 +68,36 @@ function NavbarItem(props) {
 
 function Header(props) {
   return (
-    <nav
-      className={props.className + " navbar "}
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div className="navbar-brand is-align-items-center">
-        <Link to={"/"}>
-          <TextStyled
-            text={"Ringen Terapi"}
-            color={standardColors.green1}
-            textWeight={"semibold"}
-            size={2}
-            sizeTouch={4}
-          />
-        </Link>
+    <div>
+      <nav
+        className={props.className + " navbar "}
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div className="navbar-brand is-align-items-center">
+          <Link to={"/"}>
+            <TextStyled
+              text={"Ringen Terapi"}
+              color={standardColors.green1}
+              textWeight={"semibold"}
+              size={2}
+              sizeTouch={4}
+            />
+          </Link>
 
-        <a
-          role="button"
-          className="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-end">
-          {props.items.map((item, i) => (
-            <NavbarItem key={i} item={item} itemSize={props.itemSize} />
-          ))}
+          <MenuBurgerStyled />
         </div>
-      </div>
-    </nav>
+
+        <div id="navbarBasicExample" className="navbar-menu">
+          <div className="navbar-end">
+            {props.items.map((item, i) => (
+              <NavbarItem key={i} item={item} itemSize={props.itemSize} />
+            ))}
+          </div>
+        </div>
+      </nav>
+      <MobileMenuStyled items={props.items} />
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Button } from "./button";
 import { standardColors } from "../../palettes/standardColors.style";
 
@@ -8,9 +8,16 @@ const ButtonStyled = styled(Button)`
   border-color: ${standardColors.black1};
   border-radius: 0;
 
-  padding: 0.5em 1.5em;
   background-color: transparent;
   color: ${standardColors.black1};
+
+  padding: 0.5em 1.5em;
+
+  ${(props) =>
+    props.paddingSize === 2 &&
+    css`
+      padding: 1.5em 3.5em;
+    `}
 
   &:hover {
     cursor: pointer;
