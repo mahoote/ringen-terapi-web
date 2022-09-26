@@ -1,5 +1,6 @@
 import React from "react";
 import { HeaderStyled } from "../../components/header/header.style";
+import { GlobalStyle } from "../../components/globals/global.style";
 
 const navbarItems = [
   { name: "Om meg", link: "about", type: "text" },
@@ -20,6 +21,7 @@ const navbarItems = [
 function HomePage() {
   return (
     <div>
+      <GlobalStyle />
       <HeaderStyled items={navbarItems} itemSize={5} />
     </div>
   );
