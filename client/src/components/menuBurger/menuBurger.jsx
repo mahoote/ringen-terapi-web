@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 /*
    Code from https://www.sliderrevolution.com/resources/css-hamburger-menu/
@@ -6,10 +6,14 @@ import React from "react";
 */
 
 function MenuBurger(props) {
-  function handleClick() {
-    const ham = document.querySelector("#nav-ham");
-    ham.classList.toggle("active");
+  useEffect(() => {
+    return () => {
+      const ham = document.querySelector("#nav-ham");
+      ham.classList.toggle("active");
+    };
+  }, [props.showMenu]);
 
+  function handleClick() {
     props.onClick();
   }
 

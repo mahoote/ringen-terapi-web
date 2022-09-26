@@ -6,6 +6,8 @@ import { TextStyled } from "../text/text.style";
 import { standardColors } from "../../palettes/standardColors.style";
 import { MenuBurgerStyled } from "../menuBurger/menuBurger.style";
 import { MobileMenuStyled } from "../mobileMenu/mobileMenu.style";
+import { size } from "../../sizes/screenSize.style";
+import { useResize } from "../../hooks/screenDetection";
 
 function NavbarLinkUnderline(props) {
   return <span className={props.className}></span>;
@@ -73,6 +75,15 @@ function Header(props) {
     setShowMobileMenu(!showMobileMenu);
   }
 
+  function handleResize() {
+    // Only show video if the screen is large enough.
+    if (window.innerWidth >= size.laptop) {
+      setShowMobileMenu(false);
+    }
+  }
+
+  useResize(handleResize);
+
   return (
     <div>
       <nav
@@ -92,7 +103,7 @@ function Header(props) {
             />
           </Link>
 
-          <MenuBurgerStyled onClick={handleOnclick} />
+          <MenuBurgerStyled onClick={handleOnclick} showMenu={showMobileMenu} />
         </div>
 
         <div id="navbarBasicExample" className="navbar-menu">
