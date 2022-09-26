@@ -10,7 +10,7 @@ const HeaderStyled = styled(Header)`
     margin: 0 6em;
     padding: 1em 0;
   }
-  margin: 2em;
+  margin: 0 2em;
   padding: 0.5em 0;
 `;
 

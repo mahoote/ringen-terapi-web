@@ -71,7 +71,7 @@ function Header(props) {
       role="navigation"
       aria-label="main navigation"
     >
-      <div className="navbar-brand">
+      <div className="navbar-brand is-align-items-center">
         <Link to={"/"}>
           <TextStyled
             text={"Ringen Terapi"}
