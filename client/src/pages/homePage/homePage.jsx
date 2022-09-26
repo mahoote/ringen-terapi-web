@@ -18,7 +18,11 @@ const navbarItems = [
 ];
 
 function HomePage() {
-  return <HeaderStyled items={navbarItems} />;
+  return (
+    <div>
+      <HeaderStyled items={navbarItems} itemSize={5} />
+    </div>
+  );
 }
 
 export { HomePage };

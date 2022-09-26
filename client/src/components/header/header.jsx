@@ -1,35 +1,63 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ButtonStyled } from "../button/button.style";
+import { NavbarLinkStyled, NavbarLinkUnderlineStyled } from "./header.style";
+import { TextStyled } from "../text/text.style";
+import { standardColors } from "../../palettes/standardColors.style";
+
+function NavbarLinkUnderline(props) {
+  return <span className={props.className}></span>;
+}
+
+function NavbarLink(props) {
+  return (
+    <Link className={props.className + " navbar-item "} to={props.link}>
+      {props.content}
+      <NavbarLinkUnderlineStyled />
+    </Link>
+  );
+}
 
 function NavbarItem(props) {
   const item = props.item;
 
   if (item.type === "text" && item.items === undefined) {
     return (
-      <Link className="navbar-item" to={item.link}>
-        <p>{item.name}</p>
-      </Link>
+      <NavbarLinkStyled
+        link={item.link}
+        type={item.type}
+        content={<TextStyled text={item.name} size={props.itemSize} />}
+      />
     );
   } else if (item.type === "text" && item.items !== undefined) {
     return (
       <div className="navbar-item has-dropdown is-hoverable">
-        <Link className="navbar-item" to={item.link}>
-          <p>{item.name}</p>
-        </Link>
+        <NavbarLinkStyled
+          link={item.link}
+          type={item.type}
+          content={<TextStyled text={item.name} size={props.itemSize} />}
+        />
 
         <div className="navbar-dropdown">
           {item.items.map((item, i) => (
-            <NavbarItem key={i} item={item} />
+            <NavbarItem key={i} item={item} itemSize={props.itemSize} />
           ))}
         </div>
       </div>
     );
   } else if (item.type === "button") {
     return (
-      <Link className="navbar-item" to={item.link}>
-        <ButtonStyled value={item.name} borderWidth={"3px"} />
-      </Link>
+      <NavbarLinkStyled
+        link={item.link}
+        type={item.type}
+        content={
+          <ButtonStyled
+            text={item.name}
+            borderWidth={"3px"}
+            textSize={props.itemSize}
+          />
+        }
+      />
     );
   }
 
@@ -45,7 +73,13 @@ function Header(props) {
     >
       <div className="navbar-brand">
         <Link to={"/"}>
-          <p className={"is-size-2-desktop is-size-4-touch"}>Ringen Terapi</p>
+          <TextStyled
+            text={"Ringen Terapi"}
+            color={standardColors.green1}
+            textWeight={"semibold"}
+            size={2}
+            sizeTouch={4}
+          />
         </Link>
 
         <a
@@ -64,7 +98,7 @@ function Header(props) {
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-end">
           {props.items.map((item, i) => (
-            <NavbarItem key={i} item={item} />
+            <NavbarItem key={i} item={item} itemSize={props.itemSize} />
           ))}
         </div>
       </div>
@@ -72,4 +106,4 @@ function Header(props) {
   );
 }
 
-export { Header };
+export { Header, NavbarLink, NavbarLinkUnderline };
