@@ -9,6 +9,8 @@ function MenuBurger(props) {
   function handleClick() {
     const ham = document.querySelector("#nav-ham");
     ham.classList.toggle("active");
+
+    props.onClick();
   }
 
   return (

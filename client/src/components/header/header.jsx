@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ButtonStyled } from "../button/button.style";
 import { NavbarLinkStyled, NavbarLinkUnderlineStyled } from "./header.style";
@@ -67,6 +67,12 @@ function NavbarItem(props) {
 }
 
 function Header(props) {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  function handleOnclick() {
+    setShowMobileMenu(!showMobileMenu);
+  }
+
   return (
     <div>
       <nav
@@ -85,7 +91,7 @@ function Header(props) {
             />
           </Link>
 
-          <MenuBurgerStyled />
+          <MenuBurgerStyled onClick={handleOnclick} />
         </div>
 
         <div id="navbarBasicExample" className="navbar-menu">
@@ -96,7 +102,7 @@ function Header(props) {
           </div>
         </div>
       </nav>
-      <MobileMenuStyled items={props.items} />
+      <MobileMenuStyled items={props.items} showMenu={showMobileMenu} />
     </div>
   );
 }
