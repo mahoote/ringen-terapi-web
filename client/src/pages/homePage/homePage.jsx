@@ -2,6 +2,7 @@ import React from "react";
 import { HeaderStyled } from "../../components/header/header.style";
 import { GlobalStyle } from "../../components/globals/global.style";
 import { GridStyled } from "../../components/grids/grid.style";
+import { TextStyled } from "../../components/text/text.style";
 
 const navbarItems = [
   { name: "Om meg", link: "about", type: "text" },
@@ -26,6 +27,7 @@ function HomePage() {
         <>
           <GlobalStyle />
           <HeaderStyled items={navbarItems} itemSize={5} />
+          <TextStyled text={"Hello World"} />
         </>
       }
     />
