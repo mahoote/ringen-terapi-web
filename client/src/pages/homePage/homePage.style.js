@@ -3,4 +3,4 @@ import { HomePage } from "./homePage";
 
 const HomePageStyled = styled(HomePage)``;
 
-export {HomePageStyled};
+export { HomePageStyled };
