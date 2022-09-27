@@ -17,8 +17,8 @@ const desktopSmall = 4;
 const tabletBig = 3;
 const tabletSmall = 5;
 
-const mobileBig = 4;
-const mobileSmall = 6;
+const mobileBig = 3;
+const mobileSmall = 5;
 
 const exampleImages = [
   {
