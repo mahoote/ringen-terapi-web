@@ -11,7 +11,7 @@ function HomePage() {
         <>
           <GlobalStyle />
           <HeaderStyled />
-          <ColumnsStyled className={"my-6"} />
+          <ColumnsStyled className={"my-4"} />
         </>
       }
     />
