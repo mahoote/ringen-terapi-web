@@ -10,6 +10,7 @@ import { BorderImageStyled } from "../../../images/borderImage/borderImage.style
 import { BorderImagesStyled } from "../../../images/borderImages/borderImages.style";
 import { size } from "../../../../sizes/screenSize.style";
 import { useResize } from "../../../../hooks/screenDetection";
+import { Loader } from "../../loader/loader";
 
 const desktopBig = 2;
 const desktopSmall = 4;
@@ -107,37 +108,43 @@ function MainColumnTextHeadline(props) {
 function MainColumnsDesktopImages() {
   return (
     <>
-      <div className={" column is-5 m-5"}>
-        <CenterStyled
-          content={
-            <BorderImageStyled
-              src={exampleImages[0].src}
-              alt={exampleImages[0].alt}
-              backgroundColor={standardColors.green1}
-              width={exampleImages[0].width}
-              padding={"1em"}
-              offsetY={exampleImages[0].offsetY}
-              offsetX={exampleImages[0].offsetX}
-            />
-          }
-        />
-      </div>
+      <Loader
+        className={" column is-5 m-5"}
+        content={
+          <CenterStyled
+            content={
+              <BorderImageStyled
+                src={exampleImages[0].src}
+                alt={exampleImages[0].alt}
+                backgroundColor={standardColors.green1}
+                width={exampleImages[0].width}
+                padding={"1em"}
+                offsetY={exampleImages[0].offsetY}
+                offsetX={exampleImages[0].offsetX}
+              />
+            }
+          />
+        }
+      />
 
-      <div className={" column is-5 m-5"}>
-        <CenterStyled
-          content={
-            <BorderImageStyled
-              src={exampleImages[1].src}
-              alt={exampleImages[1].alt}
-              backgroundColor={standardColors.brown3}
-              width={exampleImages[1].width}
-              padding={"1em"}
-              offsetY={exampleImages[1].offsetY}
-              offsetX={exampleImages[1].offsetX}
-            />
-          }
-        />
-      </div>
+      <Loader
+        className={" column is-5 m-5"}
+        content={
+          <CenterStyled
+            content={
+              <BorderImageStyled
+                src={exampleImages[1].src}
+                alt={exampleImages[1].alt}
+                backgroundColor={standardColors.brown3}
+                width={exampleImages[1].width}
+                padding={"1em"}
+                offsetY={exampleImages[1].offsetY}
+                offsetX={exampleImages[1].offsetX}
+              />
+            }
+          />
+        }
+      />
     </>
   );
 }
@@ -156,18 +163,23 @@ function MainColumns(props) {
 
   return (
     <div className={props.className + " columns is-centered is-multiline "}>
-      <CenterStyled
+      <Loader
         className={" column is-5 m-5 "}
-        content={<MainColumnTextHeadlineStyled />}
+        content={<CenterStyled content={<MainColumnTextHeadlineStyled />} />}
       />
+
       {isMobile ? (
-        <CenterStyled
+        <Loader
           className={" column is-12 my-6 "}
           content={
-            <BorderImagesStyled
-              images={exampleImages}
-              backgroundColor={standardColors.green1}
-              height={"500px"}
+            <CenterStyled
+              content={
+                <BorderImagesStyled
+                  images={exampleImages}
+                  backgroundColor={standardColors.green1}
+                  height={"500px"}
+                />
+              }
             />
           }
         />
@@ -175,9 +187,9 @@ function MainColumns(props) {
         <MainColumnsDesktopImages />
       )}
 
-      <CenterStyled
+      <Loader
         className={" column is-5 m-5 "}
-        content={<MainColumnTextAboutStyled />}
+        content={<CenterStyled content={<MainColumnTextAboutStyled />} />}
       />
     </div>
   );

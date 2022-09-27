@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 import { MobileMenu } from "./mobileMenu";
 import { standardColors } from "../../palettes/standardColors.style";
 
@@ -25,4 +25,10 @@ const MobileMenuStyled = styled(MobileMenu)`
     `}
 `;
 
-export { MobileMenuStyled };
+const MobileMenuGlobalStyle = createGlobalStyle`
+  html {
+    overflow: hidden;
+  }
+`;
+
+export { MobileMenuStyled, MobileMenuGlobalStyle };

@@ -5,7 +5,10 @@ import { NavbarLinkStyled, NavbarLinkUnderlineStyled } from "./header.style";
 import { TextStyled } from "../text/text.style";
 import { standardColors } from "../../palettes/standardColors.style";
 import { MenuBurgerStyled } from "../menuBurger/menuBurger.style";
-import { MobileMenuStyled } from "../mobileMenu/mobileMenu.style";
+import {
+  MobileMenuGlobalStyle,
+  MobileMenuStyled,
+} from "../mobileMenu/mobileMenu.style";
 import { size } from "../../sizes/screenSize.style";
 import { useResize } from "../../hooks/screenDetection";
 
@@ -93,6 +96,10 @@ function Header(props) {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [showMobileMenu]);
+
+  useEffect(() => {
     return () => {
       setShowMobileMenu(false);
     };
@@ -136,6 +143,7 @@ function Header(props) {
           </div>
         </div>
       </nav>
+      {showMobileMenu ? <MobileMenuGlobalStyle /> : null}
       <MobileMenuStyled items={navbarItems} showMenu={showMobileMenu} />
     </div>
   );

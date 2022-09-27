@@ -19,6 +19,7 @@ function MenuItem(props) {
     return (
       <li>
         <NavbarLinkStyled
+          className={"mt-6 pt-6"}
           link={props.item.link}
           content={
             <ButtonStyled
