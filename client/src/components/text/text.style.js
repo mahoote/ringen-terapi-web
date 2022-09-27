@@ -1,8 +1,12 @@
 import styled from "styled-components";
-import { Text } from "./text";
+import { Text, TextContentSpan } from "./text";
 
 const TextStyled = styled(Text)`
   color: ${(props) => props.color};
 `;
 
-export { TextStyled };
+const TextContentSpanStyled = styled(TextContentSpan)`
+  color: ${(props) => props.highlightColor};
+`;
+
+export { TextStyled, TextContentSpanStyled };
