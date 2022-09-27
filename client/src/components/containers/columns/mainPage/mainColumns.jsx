@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextStyled } from "../../../text/text.style";
 import { CenterStyled } from "../../center/center.style";
 import {
@@ -7,6 +7,9 @@ import {
 } from "./mainColumns.style";
 import { standardColors } from "../../../../palettes/standardColors.style";
 import { BorderImageStyled } from "../../../images/borderImage/borderImage.style";
+import { BorderImagesStyled } from "../../../images/borderImages/borderImages.style";
+import { size } from "../../../../sizes/screenSize.style";
+import { useResize } from "../../../../hooks/screenDetection";
 
 const desktopBig = 2;
 const desktopSmall = 4;
@@ -16,6 +19,29 @@ const tabletSmall = 5;
 
 const mobileBig = 4;
 const mobileSmall = 6;
+
+const exampleImages = [
+  {
+    src: require("../../../../../public/images/ex01.jpg"),
+    alt: "Example image 1",
+    width: "400px",
+    widthMobile: "300px",
+    offsetX: "-3em",
+    offsetY: "2em",
+    offsetXMobile: "-2em",
+    offsetYMobile: "-1em",
+  },
+  {
+    src: require("../../../../../public/images/ex02.jpg"),
+    alt: "Example image 2",
+    width: "400px",
+    widthMobile: "300px",
+    offsetX: "3em",
+    offsetY: "-3em",
+    offsetXMobile: "2em",
+    offsetYMobile: "2em",
+  },
+];
 
 function MainColumnTextAbout(props) {
   return (
@@ -78,23 +104,20 @@ function MainColumnTextHeadline(props) {
   );
 }
 
-function MainColumns(props) {
+function MainColumnsDesktopImages() {
   return (
-    <div className={props.className + " columns is-centered is-multiline"}>
-      <div className={" column is-5 m-5"}>
-        <CenterStyled content={<MainColumnTextHeadlineStyled />} />
-      </div>
+    <>
       <div className={" column is-5 m-5"}>
         <CenterStyled
           content={
             <BorderImageStyled
-              src={require("../../../../../public/images/ex01.jpg")}
-              alt={"Example image 1"}
+              src={exampleImages[0].src}
+              alt={exampleImages[0].alt}
               backgroundColor={standardColors.green1}
-              width={"400px"}
+              width={exampleImages[0].width}
               padding={"1em"}
-              offsetY={"1em"}
-              offsetX={"-4em"}
+              offsetY={exampleImages[0].offsetY}
+              offsetX={exampleImages[0].offsetX}
             />
           }
         />
@@ -104,20 +127,59 @@ function MainColumns(props) {
         <CenterStyled
           content={
             <BorderImageStyled
-              src={require("../../../../../public/images/ex02.jpg")}
-              alt={"Example image 2"}
+              src={exampleImages[1].src}
+              alt={exampleImages[1].alt}
               backgroundColor={standardColors.brown2}
-              width={"400px"}
+              width={exampleImages[1].width}
               padding={"1em"}
-              offsetY={"1em"}
-              offsetX={"-4em"}
+              offsetY={exampleImages[1].offsetY}
+              offsetX={exampleImages[1].offsetX}
             />
           }
         />
       </div>
-      <div className={" column is-5 m-5"}>
-        <CenterStyled content={<MainColumnTextAboutStyled />} />
-      </div>
+    </>
+  );
+}
+
+function MainColumns(props) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  function handleResize() {
+    // Only show video if the screen is large enough.
+    if (window.innerWidth >= size.tablet) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+  }
+  useResize(handleResize);
+
+  return (
+    <div className={props.className + " columns is-centered is-multiline "}>
+      <CenterStyled
+        className={" column is-5 m-5 "}
+        content={<MainColumnTextHeadlineStyled />}
+      />
+      {isMobile ? (
+        <CenterStyled
+          className={" column is-12 my-6 "}
+          content={
+            <BorderImagesStyled
+              images={exampleImages}
+              backgroundColor={standardColors.green1}
+              height={"500px"}
+            />
+          }
+        />
+      ) : (
+        <MainColumnsDesktopImages />
+      )}
+
+      <CenterStyled
+        className={" column is-5 m-5 "}
+        content={<MainColumnTextAboutStyled />}
+      />
     </div>
   );
 }
