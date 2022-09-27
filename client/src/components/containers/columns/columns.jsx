@@ -3,6 +3,7 @@ import { TextStyled } from "../../text/text.style";
 import { CenterStyled } from "../center/center.style";
 import { ColumnTextHeadlineStyled } from "./columns.style";
 import { standardColors } from "../../../palettes/standardColors.style";
+import { BorderImageStyled } from "../../images/borderImage/borderImage.style";
 
 function ColumnTextHeadline(props) {
   const desktopBig = 2;
@@ -40,11 +41,22 @@ function ColumnTextHeadline(props) {
 function Columns(props) {
   return (
     <div className={props.className + " columns is-centered "}>
-      <div className={" column is-5 "}>
+      <div className={" column is-5 mx-5"}>
         <CenterStyled content={<ColumnTextHeadlineStyled />} />
       </div>
-      <div className={" column is-5 "}>
-        <CenterStyled content={<ColumnTextHeadlineStyled />} />
+      <div className={" column is-5 mx-5"}>
+        <CenterStyled
+          content={
+            <BorderImageStyled
+              src={require("../../../../public/images/ex01.jpg")}
+              alt={"Example image 1"}
+              width={"400px"}
+              padding={"1em"}
+              offsetY={"1em"}
+              offsetX={"-4em"}
+            />
+          }
+        />
       </div>
     </div>
   );

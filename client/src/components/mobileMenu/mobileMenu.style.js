@@ -3,6 +3,7 @@ import { MobileMenu } from "./mobileMenu";
 import { standardColors } from "../../palettes/standardColors.style";
 
 const MobileMenuStyled = styled(MobileMenu)`
+  z-index: 100;
   transition: opacity 0.3s;
   opacity: 0;
   visibility: hidden;
