@@ -146,7 +146,6 @@ function MainColumns(props) {
   const [isMobile, setIsMobile] = useState(false);
 
   function handleResize() {
-    // Only show video if the screen is large enough.
     if (window.innerWidth >= size.tablet) {
       setIsMobile(false);
     } else {
