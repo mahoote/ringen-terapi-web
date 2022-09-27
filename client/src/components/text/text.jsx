@@ -1,10 +1,15 @@
 import React from "react";
 import { useTextWeight } from "../../hooks/text";
-import { TextContentSpanStyled } from "./text.style";
+import { TextContentSpanStyled, TextLinkStyled } from "./text.style";
+import { Link } from "react-router-dom";
 
 function TextContentSpan(props) {
   const textWeight = useTextWeight(props.highlightTextWeight);
-  return <span className={props.className + textWeight}>{props.content}</span>;
+  return (
+    <span className={props.className + textWeight}>
+      {props.content.split("<br/>").join("\n")}
+    </span>
+  );
 }
 
 function TextHighlight(props) {
@@ -16,18 +21,24 @@ function TextHighlight(props) {
   const spanArray = words.slice(highlightPosStart, highlightPosEnd + 1);
   const afterArray = words.slice(highlightPosEnd + 1);
 
-  console.log(beforeArray);
-
   return (
     <>
-      {beforeArray.join(" ")}
+      {beforeArray.join(" ").split("<br/>").join("\n")}
       <TextContentSpanStyled
         {...props}
         className={""}
         content={" " + spanArray.join(" ") + " "}
       />
-      {afterArray.join(" ")}
+      {afterArray.join(" ").split("<br/>").join("\n")}
     </>
+  );
+}
+
+function TextLink(props) {
+  return (
+    <Link to={props.to} className={props.className}>
+      {props.TextContent}
+    </Link>
   );
 }
 
@@ -59,6 +70,21 @@ function Text(props) {
     highlightPosStart !== -1 &&
     highlightPosEnd !== -1;
 
+  const linkTo = props.linkTo || null;
+
+  function TextContent() {
+    return hasHighlight ? (
+      <TextHighlight
+        {...props}
+        className={""}
+        highlightPosStart={highlightPosStart}
+        highlightPosEnd={highlightPosEnd}
+      />
+    ) : (
+      props.text.split("<br/>").join("\n")
+    );
+  }
+
   return (
     <p
       className={
@@ -71,18 +97,13 @@ function Text(props) {
         textWeight
       }
     >
-      {hasHighlight ? (
-        <TextHighlight
-          {...props}
-          className={""}
-          highlightPosStart={highlightPosStart}
-          highlightPosEnd={highlightPosEnd}
-        />
+      {linkTo ? (
+        <TextLinkStyled to={linkTo} TextContent={<TextContent />} />
       ) : (
-        props.text
+        <TextContent />
       )}
     </p>
   );
 }
 
-export { Text, TextContentSpan };
+export { Text, TextContentSpan, TextLink };

@@ -9,7 +9,6 @@ function BorderImage(props) {
   const onImgLoad = ({ target: img }) => {
     setOffsetHeight(img.offsetHeight);
     setOffsetWidth(img.offsetWidth);
-    console.log(offsetHeight, offsetWidth);
   };
 
   const inlineStyle = {
