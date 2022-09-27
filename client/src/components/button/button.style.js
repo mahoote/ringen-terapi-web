@@ -3,6 +3,8 @@ import { Button } from "./button";
 import { standardColors } from "../../palettes/standardColors.style";
 
 const ButtonStyled = styled(Button)`
+  transition: background-color 0.5s;
+
   border-width: ${(props) => props.borderWidth};
   border-style: solid;
   border-color: ${standardColors.black1};

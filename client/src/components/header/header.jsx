@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { ButtonStyled } from "../button/button.style";
 import { NavbarLinkStyled, NavbarLinkUnderlineStyled } from "./header.style";
 import { TextStyled } from "../text/text.style";
@@ -8,6 +8,22 @@ import { MenuBurgerStyled } from "../menuBurger/menuBurger.style";
 import { MobileMenuStyled } from "../mobileMenu/mobileMenu.style";
 import { size } from "../../sizes/screenSize.style";
 import { useResize } from "../../hooks/screenDetection";
+
+const navbarItems = [
+  { name: "Om meg", link: "about", type: "text" },
+  { name: "Tjenester", link: "services", type: "text" },
+  {
+    name: "Priser",
+    link: "prices",
+    type: "text",
+    items: [
+      { name: "Individuell", link: "prices", type: "text" },
+      { name: "Familie", link: "prices", type: "text" },
+      { name: "Arbeidsplass", link: "prices", type: "text" },
+    ],
+  },
+  { name: "Ta en prat", link: "contact", type: "button" },
+];
 
 function NavbarLinkUnderline(props) {
   return <span className={props.className}></span>;
@@ -57,7 +73,7 @@ function NavbarItem(props) {
         content={
           <ButtonStyled
             text={item.name}
-            borderWidth={"3px"}
+            borderWidth={"2.3px"}
             textSize={props.itemSize}
           />
         }
@@ -70,10 +86,17 @@ function NavbarItem(props) {
 
 function Header(props) {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const location = useLocation();
 
   function handleOnclick() {
     setShowMobileMenu(!showMobileMenu);
   }
+
+  useEffect(() => {
+    return () => {
+      setShowMobileMenu(false);
+    };
+  }, [location]);
 
   function handleResize() {
     // Only show video if the screen is large enough.
@@ -81,7 +104,6 @@ function Header(props) {
       setShowMobileMenu(false);
     }
   }
-
   useResize(handleResize);
 
   return (
@@ -108,13 +130,13 @@ function Header(props) {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-end">
-            {props.items.map((item, i) => (
-              <NavbarItem key={i} item={item} itemSize={props.itemSize} />
+            {navbarItems.map((item, i) => (
+              <NavbarItem key={i} item={item} itemSize={5} />
             ))}
           </div>
         </div>
       </nav>
-      <MobileMenuStyled items={props.items} showMenu={showMobileMenu} />
+      <MobileMenuStyled items={navbarItems} showMenu={showMobileMenu} />
     </div>
   );
 }

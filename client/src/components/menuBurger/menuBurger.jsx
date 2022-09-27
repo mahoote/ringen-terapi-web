@@ -2,14 +2,16 @@ import React, { useEffect } from "react";
 
 /*
    Code from https://www.sliderrevolution.com/resources/css-hamburger-menu/
-   See menuBurger.css for style.
+   See menuBurger.css for styling.
 */
 
 function MenuBurger(props) {
   useEffect(() => {
     return () => {
+      const showMenu = props.showMenu;
       const ham = document.querySelector("#nav-ham");
-      ham.classList.toggle("active");
+      if (!showMenu) ham.classList.add("active");
+      else ham.classList.remove("active");
     };
   }, [props.showMenu]);
 

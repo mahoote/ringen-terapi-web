@@ -10,7 +10,7 @@ function MenuItem(props) {
     return (
       <li>
         <NavbarLinkStyled
-          link={""}
+          link={props.item.link}
           content={<TextStyled text={props.item.name} size={3} />}
         />
       </li>
@@ -19,7 +19,7 @@ function MenuItem(props) {
     return (
       <li>
         <NavbarLinkStyled
-          link={""}
+          link={props.item.link}
           content={
             <ButtonStyled
               text={props.item.name}

@@ -15,6 +15,8 @@ const HeaderStyled = styled(Header)`
 `;
 
 const NavbarLinkUnderlineStyled = styled(NavbarLinkUnderline)`
+  transition: border-bottom-color 0.2s;
+
   position: absolute;
   width: 80%;
   top: 90%;
@@ -26,6 +28,10 @@ const NavbarLinkUnderlineStyled = styled(NavbarLinkUnderline)`
 
 const NavbarLinkStyled = styled(NavbarLink)`
   color: ${standardColors.black1};
+
+  &:visited {
+    color: inherit !important;
+  }
 
   &:hover {
     background-color: transparent !important;
