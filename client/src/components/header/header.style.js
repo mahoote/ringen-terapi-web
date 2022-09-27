@@ -35,14 +35,14 @@ const NavbarLinkStyled = styled(NavbarLink)`
 
   &:hover {
     background-color: transparent !important;
-    color: inherit !important;
+    color: ${standardColors.green1} !important;
   }
 
   &:hover ${NavbarLinkUnderlineStyled} {
     ${(props) =>
       props.type === "text" &&
       css`
-        border-bottom: 3px solid ${standardColors.black1};
+        border-bottom: 3px solid ${standardColors.green1};
       `}
   }
 `;
