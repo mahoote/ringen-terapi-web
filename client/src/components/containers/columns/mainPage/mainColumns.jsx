@@ -67,7 +67,7 @@ function MainColumnTextAbout(props) {
         sizeDesktop={desktopSmall}
         sizeTablet={tabletSmall}
         sizeMobile={mobileSmall}
-        color={standardColors.brown2}
+        color={standardColors.brown3}
         linkTo={"/about"}
       />
     </div>
@@ -129,7 +129,7 @@ function MainColumnsDesktopImages() {
             <BorderImageStyled
               src={exampleImages[1].src}
               alt={exampleImages[1].alt}
-              backgroundColor={standardColors.brown2}
+              backgroundColor={standardColors.brown3}
               width={exampleImages[1].width}
               padding={"1em"}
               offsetY={exampleImages[1].offsetY}

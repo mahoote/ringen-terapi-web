@@ -35,8 +35,18 @@ function TextHighlight(props) {
 }
 
 function TextLink(props) {
+  const { className, to } = props;
+
+  if (to.toString().startsWith("http") || to.toString().startsWith("www")) {
+    return (
+      <a href={to} target={"_blank"} className={className}>
+        {props.TextContent}
+      </a>
+    );
+  }
+
   return (
-    <Link to={props.to} className={props.className}>
+    <Link to={to} className={className}>
       {props.TextContent}
     </Link>
   );
