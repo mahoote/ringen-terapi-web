@@ -21,7 +21,7 @@ function Footer(props) {
     return (
       <div>
         <TextStyled
-          text={"Ringen Terapi"}
+          text={"RingenTerapi"}
           color={standardColors.green3}
           textWeight={"bold"}
           sizeTablet={3}
@@ -57,7 +57,7 @@ function Footer(props) {
     return (
       <div>
         <TextStyled
-          text={"Ringen Terapi"}
+          text={"RingenTerapi"}
           color={standardColors.green3}
           textWeight={"bold"}
           sizeDesktop={2}

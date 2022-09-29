@@ -123,7 +123,7 @@ function Header(props) {
         <div className="navbar-brand is-align-items-center">
           <Link to={"/"}>
             <TextStyled
-              text={"Ringen Terapi"}
+              text={"RingenTerapi"}
               color={standardColors.green1}
               textWeight={"semibold"}
               size={2}
