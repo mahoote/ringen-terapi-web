@@ -19,6 +19,7 @@ import {
   tabletBig,
   tabletSmall,
 } from "../../../globals/fontSizes";
+import { ButtonStyled } from "../../../button/button.style";
 
 const exampleImages = [
   {
@@ -100,6 +101,17 @@ function MainSectionOneHeadline(props) {
         sizeTablet={tabletSmall}
         sizeMobile={mobileSmall}
       />
+      <div className={"is-hidden-tablet"}>
+        <hr
+          className={"my-6"}
+          style={{ backgroundColor: standardColors.black1 }}
+        />
+        <ButtonStyled
+          text={"Ta en prat"}
+          borderWidth={"2.3px"}
+          textSize={"4"}
+        />
+      </div>
     </div>
   );
 }
