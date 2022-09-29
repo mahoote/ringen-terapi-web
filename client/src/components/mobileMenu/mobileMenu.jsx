@@ -8,7 +8,7 @@ function MenuItem(props) {
 
   if (type === "text") {
     return (
-      <li>
+      <li className={"my-3"}>
         <NavbarLinkStyled
           pageLink={props.item.pageLink}
           content={<TextStyled text={props.item.name} size={3} />}
@@ -17,9 +17,8 @@ function MenuItem(props) {
     );
   } else if (type === "button") {
     return (
-      <li>
+      <li className={"mt-6 pt-6"}>
         <NavbarLinkStyled
-          className={"mt-6 pt-6"}
           pageLink={props.item.pageLink}
           content={
             <ButtonStyled
