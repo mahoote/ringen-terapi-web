@@ -12,21 +12,7 @@ import {
 import { size } from "../../sizes/screenSize.style";
 import { useResize } from "../../hooks/screenDetection";
 
-const navbarItems = [
-  { name: "Om meg", pageLink: "/about", type: "text" },
-  { name: "Tjenester", pageLink: "/services", type: "text" },
-  {
-    name: "Priser",
-    pageLink: "prices",
-    type: "text",
-    items: [
-      { name: "Individuell", pageLink: "/prices", type: "text" },
-      { name: "Familie", pageLink: "/prices", type: "text" },
-      { name: "Arbeidsplass", pageLink: "/prices", type: "text" },
-    ],
-  },
-  { name: "Ta en prat", pageLink: "/contact", type: "button" },
-];
+import data from "../../../public/data.json";
 
 function NavbarLinkUnderline(props) {
   return <span className={props.className}></span>;
@@ -88,6 +74,8 @@ function NavbarItem(props) {
 }
 
 function Header(props) {
+  const navbarItems = data.links;
+
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const location = useLocation();
 
@@ -123,7 +111,7 @@ function Header(props) {
         <div className="navbar-brand is-align-items-center">
           <Link to={"/"}>
             <TextStyled
-              text={"RingenTerapi"}
+              text={data.websiteName}
               color={standardColors.green1}
               textWeight={"semibold"}
               size={2}

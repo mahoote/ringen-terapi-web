@@ -5,6 +5,31 @@
     "email": "epostadresse@gmail.com",
     "phone": "+4712345678"
   },
+  "links": [
+    {
+      "name": "Om meg",
+      "pageLink": "/about",
+      "type": "text"
+    },
+    { "name": "Tjenester",
+      "pageLink": "/services",
+      "type": "text"
+    },
+    {
+      "name": "Priser",
+      "pageLink": "prices",
+      "type": "text",
+      "items": [
+        { "name": "Individuell", "pageLink": "/prices", "type": "text" },
+        { "name": "Familie", "pageLink": "/prices", "type": "text" },
+        { "name": "Arbeidsplass", "pageLink": "/prices", "type": "text" }
+      ]
+    },
+    { "name": "Ta en prat",
+      "pageLink": "/contact",
+      "type": "button"
+    }
+  ],
   "homePage": {
     "section1": {
       "heading": {

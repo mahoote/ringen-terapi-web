@@ -32,20 +32,27 @@ const images = [
 function MainSectionFour(props) {
   return (
     <div className={props.className}>
-      <div
-        className={" is-hidden-tablet "}
-        style={{ backgroundColor: standardColors.brown3, marginBottom: "6em" }}
-      >
-        <BorderImageStyled
-          src={images[0].src}
-          alt={images[0].alt}
-          backgroundColor={standardColors.brown3}
-          width={images[0].width}
-          padding={"1em"}
-          offsetY={images[0].offsetY}
-          offsetX={images[0].offsetX}
-        />
-      </div>
+      <Loader
+        content={
+          <div
+            className={" is-hidden-tablet "}
+            style={{
+              backgroundColor: standardColors.brown3,
+              marginBottom: "6em",
+            }}
+          >
+            <BorderImageStyled
+              src={images[0].src}
+              alt={images[0].alt}
+              backgroundColor={standardColors.brown3}
+              width={images[0].width}
+              padding={"1em"}
+              offsetY={images[0].offsetY}
+              offsetX={images[0].offsetX}
+            />
+          </div>
+        }
+      />
 
       <Loader
         content={

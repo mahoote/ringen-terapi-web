@@ -117,16 +117,20 @@ function MainSectionThreeServices() {
             <MainSectionThreeServiceStyled key={i} i={i} service={service} />
           ))}
           <div className={" column is-4 my-3 ml-5 is-hidden-mobile "}>
-            <CenterStyled
+            <Loader
               content={
-                <BorderImageStyled
-                  src={images[0].src}
-                  alt={images[0].alt}
-                  backgroundColor={standardColors.brown3}
-                  width={images[0].width}
-                  padding={"1em"}
-                  offsetY={images[0].offsetY}
-                  offsetX={images[0].offsetX}
+                <CenterStyled
+                  content={
+                    <BorderImageStyled
+                      src={images[0].src}
+                      alt={images[0].alt}
+                      backgroundColor={standardColors.brown3}
+                      width={images[0].width}
+                      padding={"1em"}
+                      offsetY={images[0].offsetY}
+                      offsetX={images[0].offsetX}
+                    />
+                  }
                 />
               }
             />
