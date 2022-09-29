@@ -13,23 +13,7 @@ import { Loader } from "../../loader/loader";
 import { MainSectionThreeServiceStyled } from "./mainSectionThree.style";
 import { standardColors } from "../../../../palettes/standardColors.style";
 
-const services = [
-  {
-    title: "Individuell",
-    list: ["Punkt", "Punkt", "Punkt", "Punkt"],
-    pageLink: "/services",
-  },
-  {
-    title: "Familie",
-    list: ["Punkt", "Punkt", "Punkt", "Punkt", "Punkt", "Punkt"],
-    pageLink: "/services",
-  },
-  {
-    title: "Arbeidsplass",
-    list: ["Punkt", "Punkt", "Punkt", "Punkt"],
-    pageLink: "/services",
-  },
-];
+import data from "../../../../../public/data.json";
 
 function MainSectionThreeHeadline(props) {
   return (
@@ -41,7 +25,7 @@ function MainSectionThreeHeadline(props) {
             content={
               <TextStyled
                 className={"my-5 mx-2"}
-                text={"Hvordan kan jeg hjelpe?"}
+                text={data.homePage.section3.heading.line1.text}
                 sizeDesktop={desktopBig}
                 sizeTablet={tabletBig}
                 sizeMobile={mobileBig}
@@ -52,7 +36,7 @@ function MainSectionThreeHeadline(props) {
           <Loader
             content={
               <TextStyled
-                text={"Mine tjenester"}
+                text={data.homePage.section3.heading.line2.text}
                 sizeDesktop={desktopSmall}
                 sizeTablet={tabletSmall}
                 sizeMobile={mobileSmall}
@@ -111,6 +95,8 @@ function MainSectionThreeService(props) {
 }
 
 function MainSectionThreeServices() {
+  const services = data.services;
+
   return (
     <CenterStyled
       content={

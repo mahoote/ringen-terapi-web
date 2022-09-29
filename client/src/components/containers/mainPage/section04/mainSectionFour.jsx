@@ -12,6 +12,8 @@ import { ButtonStyled } from "../../../button/button.style";
 import { CenterStyled } from "../../center/center.style";
 import { Loader } from "../../loader/loader";
 
+import data from "../../../../../public/data.json";
+
 function MainSectionFour(props) {
   return (
     <div className={props.className}>
@@ -23,7 +25,7 @@ function MainSectionFour(props) {
                 content={
                   <div>
                     <TextStyled
-                      text={"Ta kontakt og la oss bli kjent"}
+                      text={data.homePage.section4.contact.line1.text}
                       sizeDesktop={desktopBig}
                       sizeTablet={tabletBig}
                       sizeMobile={mobileBig}
@@ -31,9 +33,7 @@ function MainSectionFour(props) {
                     />
                     <TextStyled
                       className={"my-5"}
-                      text={
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                      }
+                      text={data.homePage.section4.contact.line2.text}
                       sizeDesktop={desktopSmall}
                       sizeTablet={tabletSmall}
                       sizeMobile={mobileSmall}

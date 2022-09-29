@@ -3,25 +3,26 @@ import React, { useEffect, useRef, useState } from "react";
 import { desktopBig, mobileBig, tabletBig } from "../../../globals/fontSizes";
 import { MainSectionTwoTextStyled } from "./mainSectionTwo.style";
 import { useGetScreenDistance } from "../../../../hooks/screenDetection";
+import data from "../../../../../public/data.json";
 
 function MainSectionTwoText(props) {
   return (
     <div className={props.className}>
       <TextStyled
         className={"is-hidden-mobile"}
-        text={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-        }
+        text={data.homePage.section2.line.text}
         sizeDesktop={desktopBig}
         sizeTablet={tabletBig}
         sizeMobile={mobileBig}
+        textWeight={"light"}
+        highlightPosStart={data.homePage.section2.line.highlightPosStart}
+        highlightPosEnd={data.homePage.section2.line.highlightPosEnd}
+        highlightTextWeight={"bold"}
       />
       <TextStyled
         className={"is-hidden-tablet has-text-centered"}
         textWeight={"bold"}
-        text={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-        }
+        text={data.homePage.section2.line.text}
         sizeDesktop={desktopBig}
         sizeTablet={tabletBig}
         sizeMobile={mobileBig}

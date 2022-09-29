@@ -5,11 +5,7 @@ import { Link } from "react-router-dom";
 
 function TextContentSpan(props) {
   const textWeight = useTextWeight(props.highlightTextWeight);
-  return (
-    <span className={props.className + textWeight}>
-      {props.content.split("<br/>").join("\n")}
-    </span>
-  );
+  return <span className={props.className + textWeight}>{props.content}</span>;
 }
 
 function TextHighlight(props) {
@@ -23,13 +19,13 @@ function TextHighlight(props) {
 
   return (
     <>
-      {beforeArray.join(" ").split("<br/>").join("\n")}
+      {beforeArray.join(" ")}
       <TextContentSpanStyled
         {...props}
         className={""}
         content={" " + spanArray.join(" ") + " "}
       />
-      {afterArray.join(" ").split("<br/>").join("\n")}
+      {afterArray.join(" ")}
     </>
   );
 }
@@ -71,8 +67,8 @@ function Text(props) {
 
   const textWeight = useTextWeight(props.textWeight);
 
-  const highlightPosStart = props.highlightPosStart;
-  const highlightPosEnd = props.highlightPosEnd;
+  const highlightPosStart = props.highlightPosStart - 1;
+  const highlightPosEnd = props.highlightPosEnd - 1;
 
   const hasHighlight =
     highlightPosStart !== undefined &&
@@ -91,7 +87,7 @@ function Text(props) {
         highlightPosEnd={highlightPosEnd}
       />
     ) : (
-      props.text.split("<br/>").join("\n")
+      props.text
     );
   }
 

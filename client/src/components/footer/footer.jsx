@@ -5,6 +5,10 @@ import { standardColors } from "../../palettes/standardColors.style";
 import { size } from "../../sizes/screenSize.style";
 import { useResize } from "../../hooks/screenDetection";
 
+import data from "../../../public/data.json";
+
+const currentYear = new Date().getFullYear();
+
 function Footer(props) {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -21,16 +25,16 @@ function Footer(props) {
     return (
       <div>
         <TextStyled
-          text={"RingenTerapi"}
+          text={data.websiteName}
           color={standardColors.green3}
           textWeight={"bold"}
           sizeTablet={3}
           sizeMobile={4}
         />
         <div className={"mt-5"}>
-          <TextStyled text={"Adresse 123, 123 Oslo"} />
-          <TextStyled text={"epostadresse@gmail.com"} />
-          <TextStyled text={"+47 123 45 678"} />
+          <TextStyled text={data.info.address} />
+          <TextStyled text={data.info.email} />
+          <TextStyled text={data.info.phone} />
         </div>
       </div>
     );
@@ -41,7 +45,7 @@ function Footer(props) {
       <div>
         <TextStyled
           className={"my-6"}
-          text={"© RingenTerapi 2022"}
+          text={`© ${data.websiteName} ${currentYear}`}
           sizeTouch={6}
         />
         <TextStyled
@@ -57,7 +61,7 @@ function Footer(props) {
     return (
       <div>
         <TextStyled
-          text={"RingenTerapi"}
+          text={data.websiteName}
           color={standardColors.green3}
           textWeight={"bold"}
           sizeDesktop={2}
@@ -65,7 +69,7 @@ function Footer(props) {
         />
         <TextStyled
           className={"my-6"}
-          text={"© RingenTerapi 2022"}
+          text={`© ${data.websiteName} ${currentYear}`}
           size={5}
           sizeTouch={6}
         />
@@ -81,9 +85,9 @@ function Footer(props) {
   function FooterLeft() {
     return (
       <div>
-        <TextStyled text={"Adresse 123, 123 Oslo"} sizeDesktop={5} />
-        <TextStyled text={"epostadresse@gmail.com"} sizeDesktop={5} />
-        <TextStyled text={"+47 123 45 678"} sizeDesktop={5} />
+        <TextStyled text={data.info.address} sizeDesktop={5} />
+        <TextStyled text={data.info.email} sizeDesktop={5} />
+        <TextStyled text={data.info.phone} sizeDesktop={5} />
       </div>
     );
   }

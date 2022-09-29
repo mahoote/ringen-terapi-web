@@ -21,22 +21,24 @@ import {
 } from "../../../globals/fontSizes";
 import { ButtonStyled } from "../../../button/button.style";
 
-const exampleImages = [
+import data from "../../../../../public/data.json";
+
+const images = [
   {
-    src: require("../../../../../public/images/ex01.jpg"),
-    alt: "Example image 1",
-    width: "400px",
-    widthMobile: "300px",
+    src: require("../../../../../public/images/image01.jpg"),
+    alt: data.homePage.section1.image1.description,
+    width: data.homePage.section1.image1.width,
+    widthMobile: data.homePage.section1.image1.widthMobile,
     offsetX: "-3em",
     offsetY: "2em",
     offsetXMobile: "-2em",
     offsetYMobile: "-1em",
   },
   {
-    src: require("../../../../../public/images/ex02.jpg"),
-    alt: "Example image 2",
-    width: "400px",
-    widthMobile: "300px",
+    src: require("../../../../../public/images/image02.jpg"),
+    alt: data.homePage.section1.image2.description,
+    width: data.homePage.section1.image2.width,
+    widthMobile: data.homePage.section1.image2.widthMobile,
     offsetX: "3em",
     offsetY: "-3em",
     offsetXMobile: "2em",
@@ -49,15 +51,14 @@ function MainSectionOneAbout(props) {
     <div className={props.className}>
       <TextStyled
         className={"my-5"}
-        text={"Hei, jeg er Lin"}
+        text={data.homePage.section1.about.line1.text}
         sizeDesktop={desktopBig}
         sizeTablet={tabletBig}
         sizeMobile={mobileBig}
         textWeight={"bold"}
       />
       <TextStyled
-        text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br/>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. `}
+        text={data.homePage.section1.about.line2.text}
         sizeDesktop={desktopSmall}
         sizeTablet={tabletSmall}
         sizeMobile={mobileSmall}
@@ -79,24 +80,26 @@ function MainSectionOneHeadline(props) {
   return (
     <div className={props.className}>
       <TextStyled
-        text={"INDIVIDUELL, FAMILIE, OG ARBEIDSPLASS"}
+        text={data.homePage.section1.heading.line1.text}
         sizeDesktop={desktopSmall}
         sizeTablet={tabletSmall}
         sizeMobile={mobileSmall}
       />
       <TextStyled
         className={"my-5"}
-        text={"Atferdspsykologi psyko-, kropps og relasjonsterapi"}
+        text={data.homePage.section1.heading.line2.text}
         sizeDesktop={desktopBig}
         sizeTablet={tabletBig}
         sizeMobile={mobileBig}
         textWeight={"bold"}
-        highlightPosStart={1}
-        highlightPosEnd={4}
+        highlightPosStart={
+          data.homePage.section1.heading.line2.highlightPosStart
+        }
+        highlightPosEnd={data.homePage.section1.heading.line2.highlightPosEnd}
         highlightColor={standardColors.green1}
       />
       <TextStyled
-        text={"I OSLO OG LILLESTRØM"}
+        text={data.homePage.section1.heading.line3.text}
         sizeDesktop={desktopSmall}
         sizeTablet={tabletSmall}
         sizeMobile={mobileSmall}
@@ -125,13 +128,13 @@ function MainColumnsDesktopImages() {
           <CenterStyled
             content={
               <BorderImageStyled
-                src={exampleImages[0].src}
-                alt={exampleImages[0].alt}
+                src={images[0].src}
+                alt={images[0].alt}
                 backgroundColor={standardColors.green1}
-                width={exampleImages[0].width}
+                width={images[0].width}
                 padding={"1em"}
-                offsetY={exampleImages[0].offsetY}
-                offsetX={exampleImages[0].offsetX}
+                offsetY={images[0].offsetY}
+                offsetX={images[0].offsetX}
               />
             }
           />
@@ -144,13 +147,13 @@ function MainColumnsDesktopImages() {
           <CenterStyled
             content={
               <BorderImageStyled
-                src={exampleImages[1].src}
-                alt={exampleImages[1].alt}
+                src={images[1].src}
+                alt={images[1].alt}
                 backgroundColor={standardColors.brown3}
-                width={exampleImages[1].width}
+                width={images[1].width}
                 padding={"1em"}
-                offsetY={exampleImages[1].offsetY}
-                offsetX={exampleImages[1].offsetX}
+                offsetY={images[1].offsetY}
+                offsetX={images[1].offsetX}
               />
             }
           />
@@ -190,7 +193,7 @@ function MainSectionOne(props) {
             <CenterStyled
               content={
                 <BorderImagesStyled
-                  images={exampleImages}
+                  images={images}
                   backgroundColor={standardColors.green1}
                   height={"500px"}
                 />
