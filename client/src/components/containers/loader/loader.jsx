@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import React, { useEffect, useRef, useState } from "react";
 import { LoaderContentStyled } from "./loader.style";
+import { useGetScreenDistance } from "../../../hooks/screenDetection";
 
 function LoaderContent(props) {
   const { className, content, divShown, rf } = props;
@@ -13,22 +13,22 @@ function LoaderContent(props) {
 }
 
 function Loader(props) {
+  const showThreshold = 150;
   const [divShown, setDivShown] = useState(false);
-  const { ref, inView } = useInView({
-    threshold: 0,
-  });
+
+  const ref = useRef();
+  const { topSpace, bottomSpace } = useGetScreenDistance(ref);
 
   useEffect(() => {
-    if (inView && !divShown) {
+    if (bottomSpace > showThreshold && !divShown) {
       setDivShown(true);
     }
-  }, [inView]);
+  }, [topSpace, bottomSpace]);
 
   return (
     <LoaderContentStyled
       className={props.className}
       rf={ref}
-      inView={inView}
       divShown={divShown}
       content={props.content}
     />

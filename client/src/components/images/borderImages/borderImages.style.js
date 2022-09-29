@@ -5,6 +5,7 @@ const BorderImagesStyled = styled(BorderImages)`
   text-align: center;
   width: 100%;
   position: relative;
+  overflow: hidden;
 `;
 
 const BorderImagesBackgroundStyled = styled(BorderImagesBackground)`
