@@ -10,6 +10,7 @@ const MainSectionThreeStyled = styled(MainSectionThree)`
 
 const MainSectionThreeServiceStyled = styled(MainSectionThreeService)`
   border: 3px solid ${standardColors.brown4};
+  max-width: 25em;
 `;
 
 export { MainSectionThreeStyled, MainSectionThreeServiceStyled };

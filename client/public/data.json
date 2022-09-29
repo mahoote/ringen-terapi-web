@@ -54,6 +54,11 @@
         "line2": {
           "text": "Mine tjenester"
         }
+      },
+      "image1": {
+        "description": "This is an example image",
+        "width": "400px",
+        "widthMobile": "200px"
       }
     },
     "section4": {

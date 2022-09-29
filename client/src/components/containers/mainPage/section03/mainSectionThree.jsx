@@ -12,8 +12,20 @@ import { CenterStyled } from "../../center/center.style";
 import { Loader } from "../../loader/loader";
 import { MainSectionThreeServiceStyled } from "./mainSectionThree.style";
 import { standardColors } from "../../../../palettes/standardColors.style";
-
+import { BorderImageStyled } from "../../../images/borderImage/borderImage.style";
 import data from "../../../../../public/data.json";
+
+// Image does not show on mobile screen. See section four.
+const images = [
+  {
+    src: require("../../../../../public/images/image03.jpg"),
+    alt: data.homePage.section3.image1.description,
+    width: data.homePage.section3.image1.width,
+    widthMobile: data.homePage.section3.image1.widthMobile,
+    offsetX: "-4em",
+    offsetY: "0",
+  },
+];
 
 function MainSectionThreeHeadline(props) {
   return (
@@ -53,7 +65,7 @@ function MainSectionThreeService(props) {
   const { i, service, className } = props;
 
   return (
-    <div key={i} className={" column is-5 m-3 "}>
+    <div key={i} className={" column is-4 m-3 "}>
       <Loader
         content={
           <>
@@ -100,10 +112,25 @@ function MainSectionThreeServices() {
   return (
     <CenterStyled
       content={
-        <div className={"columns is-multiline is-centered"}>
+        <div className={"columns is-multiline is-centered is-vcentered"}>
           {services.map((service, i) => (
             <MainSectionThreeServiceStyled key={i} i={i} service={service} />
           ))}
+          <div className={" column is-4 my-3 ml-5 is-hidden-mobile "}>
+            <CenterStyled
+              content={
+                <BorderImageStyled
+                  src={images[0].src}
+                  alt={images[0].alt}
+                  backgroundColor={standardColors.brown3}
+                  width={images[0].width}
+                  padding={"1em"}
+                  offsetY={images[0].offsetY}
+                  offsetX={images[0].offsetX}
+                />
+              }
+            />
+          </div>
         </div>
       }
     />

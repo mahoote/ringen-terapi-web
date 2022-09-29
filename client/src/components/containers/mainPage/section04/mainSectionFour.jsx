@@ -12,11 +12,41 @@ import { ButtonStyled } from "../../../button/button.style";
 import { CenterStyled } from "../../center/center.style";
 import { Loader } from "../../loader/loader";
 
+import { BorderImageStyled } from "../../../images/borderImage/borderImage.style";
+import { standardColors } from "../../../../palettes/standardColors.style";
+
 import data from "../../../../../public/data.json";
+
+// Same image as section three. Only shows on mobile screen.
+const images = [
+  {
+    src: require("../../../../../public/images/image03.jpg"),
+    alt: data.homePage.section3.image1.description,
+    width: data.homePage.section3.image1.width,
+    widthMobile: data.homePage.section3.image1.widthMobile,
+    offsetX: "0em",
+    offsetY: "3em",
+  },
+];
 
 function MainSectionFour(props) {
   return (
     <div className={props.className}>
+      <div
+        className={" is-hidden-tablet "}
+        style={{ backgroundColor: standardColors.brown3, marginBottom: "6em" }}
+      >
+        <BorderImageStyled
+          src={images[0].src}
+          alt={images[0].alt}
+          backgroundColor={standardColors.brown3}
+          width={images[0].width}
+          padding={"1em"}
+          offsetY={images[0].offsetY}
+          offsetX={images[0].offsetX}
+        />
+      </div>
+
       <Loader
         content={
           <div className={"columns is-centered is-vcentered is-multiline mx-2"}>
