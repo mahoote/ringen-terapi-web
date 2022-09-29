@@ -6,6 +6,7 @@ import { MainSectionOneStyled } from "../../components/containers/mainPage/secti
 import { FooterStyled } from "../../components/footer/footer.style";
 import { MainSectionTwoStyled } from "../../components/containers/mainPage/section02/mainSectionTwo.style";
 import { MainSectionThreeStyled } from "../../components/containers/mainPage/section03/mainSectionThree.style";
+import { MainSectionFourStyled } from "../../components/containers/mainPage/section04/mainSectionFour.style";
 
 function HomePage(props) {
   return (
@@ -19,6 +20,7 @@ function HomePage(props) {
             <MainSectionOneStyled className={"py-4"} />
             <MainSectionTwoStyled />
             <MainSectionThreeStyled className={"py-6"} />
+            <MainSectionFourStyled />
           </div>
           <FooterStyled />
         </>

@@ -40,7 +40,7 @@ function MainSectionThreeHeadline(props) {
           <Loader
             content={
               <TextStyled
-                className={"my-5"}
+                className={"my-5 mx-2"}
                 text={"Hvordan kan jeg hjelpe?"}
                 sizeDesktop={desktopBig}
                 sizeTablet={tabletBig}
