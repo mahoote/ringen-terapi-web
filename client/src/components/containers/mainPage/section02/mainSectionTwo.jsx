@@ -8,6 +8,17 @@ function MainSectionTwoText(props) {
   return (
     <div className={props.className}>
       <TextStyled
+        className={"is-hidden-mobile"}
+        text={
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        }
+        sizeDesktop={desktopBig}
+        sizeTablet={tabletBig}
+        sizeMobile={mobileBig}
+      />
+      <TextStyled
+        className={"is-hidden-tablet has-text-centered"}
+        textWeight={"bold"}
         text={
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
         }
