@@ -126,9 +126,8 @@ function Header(props) {
               text={"Ringen Terapi"}
               color={standardColors.green1}
               textWeight={"semibold"}
-              sizeDesktop={2}
-              sizeTablet={3}
-              sizeMobile={4}
+              size={2}
+              sizeTouch={3}
             />
           </Link>
 
