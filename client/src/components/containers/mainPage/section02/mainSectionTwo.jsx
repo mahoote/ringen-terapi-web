@@ -24,7 +24,7 @@ function MainSectionTwo(props) {
   const { topStart, bottomEnd } = useGetScreenDistance(ref);
   const [showElement, setShowElement] = useState(false);
 
-  const showThreshold = 200;
+  const showThreshold = 300;
 
   useEffect(() => {
     // console.log("Top: " + topStart);

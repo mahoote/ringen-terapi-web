@@ -96,7 +96,7 @@ function Footer(props) {
           <FooterLeftMobile />
         </div>
       ) : (
-        <div className={" columns is-multiline is-centered"}>
+        <div className={" columns is-multiline is-centered is-vcentered"}>
           <CenterStyled className={"column is-5"} content={<FooterRight />} />
           <CenterStyled className={"column is-5"} content={<FooterLeft />} />
         </div>
