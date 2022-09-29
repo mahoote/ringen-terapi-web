@@ -17,13 +17,13 @@ function Loader(props) {
   const [divShown, setDivShown] = useState(false);
 
   const ref = useRef();
-  const { topSpace, bottomSpace } = useGetScreenDistance(ref);
+  const { topStart, topEnd } = useGetScreenDistance(ref);
 
   useEffect(() => {
-    if (bottomSpace > showThreshold && !divShown) {
+    if (topEnd > showThreshold && !divShown) {
       setDivShown(true);
     }
-  }, [topSpace, bottomSpace]);
+  }, [topStart, topEnd]);
 
   return (
     <LoaderContentStyled

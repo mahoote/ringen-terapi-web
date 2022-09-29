@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { standardColors } from "../../../../palettes/standardColors.style";
 import { device } from "../../../../sizes/screenSize.style";
-import { MainSectionTwo } from "./mainSectionTwo";
+import { MainSectionTwo, MainSectionTwoText } from "./mainSectionTwo";
 
 const MainSectionTwoStyled = styled(MainSectionTwo)`
   color: ${standardColors.green3};
-  background-color: ${standardColors.green1};
+  background-color: transparent;
 
   padding: 20em 2em;
 
@@ -19,4 +19,20 @@ const MainSectionTwoStyled = styled(MainSectionTwo)`
   }
 `;
 
-export { MainSectionTwoStyled };
+const MainSectionTwoTextStyled = styled(MainSectionTwoText)`
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+
+  transition: opacity 1s;
+
+  ${(props) =>
+    props.showElement === false &&
+    css`
+      opacity: 0;
+    `}
+`;
+
+export { MainSectionTwoStyled, MainSectionTwoTextStyled };

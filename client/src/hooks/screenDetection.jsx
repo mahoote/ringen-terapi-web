@@ -5,15 +5,19 @@ export function useGetScreenDistance(ref) {
    * Get the distance between an element and the ends of the screen.
    * */
 
-  const [topSpace, setTopSpace] = useState();
-  const [bottomSpace, setBottomSpace] = useState();
+  const [topStart, setTopStart] = useState();
+  const [topEnd, setTopEnd] = useState();
+
+  const [bottomEnd, setBottomEnd] = useState();
 
   const onScroll = () => {
     const el = ref.current;
 
     if (el !== null) {
-      setTopSpace(el.getBoundingClientRect().top);
-      setBottomSpace(window.innerHeight - el.getBoundingClientRect().top);
+      setTopStart(el.getBoundingClientRect().top);
+      setTopEnd(window.innerHeight - el.getBoundingClientRect().top);
+
+      setBottomEnd(window.innerHeight - el.getBoundingClientRect().bottom);
     }
   };
 
@@ -27,7 +31,7 @@ export function useGetScreenDistance(ref) {
     window.addEventListener("scroll", onScroll);
   }, []);
 
-  return { topSpace, bottomSpace };
+  return { topStart, topEnd, bottomEnd };
 }
 
 export function useResize(resizeHandler) {

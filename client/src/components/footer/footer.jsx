@@ -89,7 +89,7 @@ function Footer(props) {
   }
 
   return (
-    <footer className={props.className + " footer mt-6 pb-6"}>
+    <footer className={props.className + " footer py-6"}>
       {isMobile ? (
         <div className={" columns is-multiline mx-3"}>
           <FooterRightMobile />

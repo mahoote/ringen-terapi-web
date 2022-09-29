@@ -70,35 +70,41 @@ function MainSectionThreeService(props) {
 
   return (
     <div key={i} className={" column is-5 m-3 "}>
-      <div className={className + " p-6 "}>
-        <TextStyled
-          text={service.title}
-          sizeDesktop={desktopBig}
-          sizeTablet={tabletBig}
-          sizeMobile={mobileBig}
-          textWeight={"bold"}
-        />
-        {service.list.map((item, i) => (
-          <ul key={i}>
-            <li className={" my-2 "}>
+      <Loader
+        content={
+          <>
+            <div className={className + " p-6 "}>
               <TextStyled
-                text={item}
-                sizeDesktop={desktopSmall}
-                sizeTablet={tabletSmall}
-                sizeMobile={mobileSmall}
+                text={service.title}
+                sizeDesktop={desktopBig}
+                sizeTablet={tabletBig}
+                sizeMobile={mobileBig}
+                textWeight={"bold"}
               />
-            </li>
-          </ul>
-        ))}
-      </div>
-      <TextStyled
-        className={"my-5"}
-        text={"Les mer ➝"}
-        sizeDesktop={desktopSmall}
-        sizeTablet={tabletSmall}
-        sizeMobile={mobileSmall}
-        color={standardColors.brown3}
-        linkTo={service.pageLink}
+              {service.list.map((item, i) => (
+                <ul key={i}>
+                  <li className={" my-2 "}>
+                    <TextStyled
+                      text={item}
+                      sizeDesktop={desktopSmall}
+                      sizeTablet={tabletSmall}
+                      sizeMobile={mobileSmall}
+                    />
+                  </li>
+                </ul>
+              ))}
+            </div>
+            <TextStyled
+              className={"my-5"}
+              text={"Les mer ➝"}
+              sizeDesktop={desktopSmall}
+              sizeTablet={tabletSmall}
+              sizeMobile={mobileSmall}
+              color={standardColors.brown3}
+              linkTo={service.pageLink}
+            />
+          </>
+        }
       />
     </div>
   );
@@ -110,11 +116,7 @@ function MainSectionThreeServices() {
       content={
         <div className={"columns is-multiline is-centered"}>
           {services.map((service, i) => (
-            <Loader
-              content={
-                <MainSectionThreeServiceStyled i={i} service={service} />
-              }
-            />
+            <MainSectionThreeServiceStyled key={i} i={i} service={service} />
           ))}
         </div>
       }
@@ -125,7 +127,7 @@ function MainSectionThreeServices() {
 function MainSectionThree(props) {
   return (
     <div className={props.className}>
-      <MainSectionThreeHeadline className={"my-6"} />
+      <MainSectionThreeHeadline className={"mb-6"} />
       <MainSectionThreeServices />
     </div>
   );

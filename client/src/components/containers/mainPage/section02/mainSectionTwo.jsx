@@ -1,29 +1,46 @@
-import { CenterStyled } from "../../center/center.style";
-import { Loader } from "../../loader/loader";
 import { TextStyled } from "../../../text/text.style";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { desktopBig, mobileBig, tabletBig } from "../../../globals/fontSizes";
+import { MainSectionTwoTextStyled } from "./mainSectionTwo.style";
+import { useGetScreenDistance } from "../../../../hooks/screenDetection";
 
-function MainSectionTwo(props) {
+function MainSectionTwoText(props) {
   return (
-    <CenterStyled
-      className={props.className}
-      content={
-        <Loader
-          content={
-            <TextStyled
-              text={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-              }
-              sizeDesktop={desktopBig}
-              sizeTablet={tabletBig}
-              sizeMobile={mobileBig}
-            />
-          }
-        />
-      }
-    />
+    <div className={props.className}>
+      <TextStyled
+        text={
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        }
+        sizeDesktop={desktopBig}
+        sizeTablet={tabletBig}
+        sizeMobile={mobileBig}
+      />
+    </div>
   );
 }
 
-export { MainSectionTwo };
+function MainSectionTwo(props) {
+  const ref = useRef();
+  const { topStart, bottomEnd } = useGetScreenDistance(ref);
+  const [showElement, setShowElement] = useState(false);
+
+  const showThreshold = 200;
+
+  useEffect(() => {
+    // console.log("Top: " + topStart);
+    // console.log("Bottom end: " + bottomEnd);
+
+    if (topStart < showThreshold && bottomEnd < showThreshold) {
+      console.log("Show");
+      setShowElement(true);
+    } else setShowElement(false);
+  }, [topStart, bottomEnd]);
+
+  return (
+    <div className={props.className} ref={ref}>
+      <MainSectionTwoTextStyled showElement={showElement} />
+    </div>
+  );
+}
+
+export { MainSectionTwo, MainSectionTwoText };

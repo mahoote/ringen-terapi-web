@@ -161,7 +161,7 @@ function MainSectionOne(props) {
   useResize(handleResize);
 
   return (
-    <div className={props.className + " columns is-centered is-multiline "}>
+    <div className={props.className + " columns is-centered is-multiline mb-0"}>
       <Loader
         className={" column is-5 m-5 "}
         content={<CenterStyled content={<MainSectionOneHeadlineStyled />} />}

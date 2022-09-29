@@ -4,8 +4,13 @@ import {
   MainSectionOneAbout,
   MainSectionOneHeadline,
 } from "./mainSectionOne";
+import { standardColors } from "../../../../palettes/standardColors.style";
 
-const MainSectionOneStyled = styled(MainSectionOne)``;
+const MainSectionOneStyled = styled(MainSectionOne)`
+  background-color: ${standardColors.white1};
+  position: relative;
+  z-index: 10;
+`;
 
 const MainSectionOneHeadlineStyled = styled(MainSectionOneHeadline)`
   width: 85%;

@@ -4,14 +4,12 @@ import { device } from "../../sizes/screenSize.style";
 import { standardColors } from "../../palettes/standardColors.style";
 
 const HeaderStyled = styled(Header)`
-  background-color: transparent;
+  background-color: ${standardColors.white1};
 
   @media screen and ${device.laptop} {
-    margin: 0 6em;
-    padding: 1em 0;
+    padding: 1em 6em;
   }
-  margin: 0 2em;
-  padding: 0.5em 0;
+  padding: 0.5em 2em;
 `;
 
 const NavbarLinkUnderlineStyled = styled(NavbarLinkUnderline)`

@@ -5,19 +5,20 @@ import { GridStyled } from "../../components/grids/grid.style";
 import { MainSectionOneStyled } from "../../components/containers/mainPage/section01/mainSectionOne.style";
 import { FooterStyled } from "../../components/footer/footer.style";
 import { MainSectionTwoStyled } from "../../components/containers/mainPage/section02/mainSectionTwo.style";
-import { MainSectionThree } from "../../components/containers/mainPage/section03/mainSectionThree";
+import { MainSectionThreeStyled } from "../../components/containers/mainPage/section03/mainSectionThree.style";
 
-function HomePage() {
+function HomePage(props) {
   return (
     <GridStyled
+      className={props.className}
       content={
         <>
           <GlobalStyle />
           <HeaderStyled />
           <div>
-            <MainSectionOneStyled className={"my-4"} />
+            <MainSectionOneStyled className={"py-4"} />
             <MainSectionTwoStyled />
-            <MainSectionThree className={"my-6"} />
+            <MainSectionThreeStyled className={"py-6"} />
           </div>
           <FooterStyled />
         </>
