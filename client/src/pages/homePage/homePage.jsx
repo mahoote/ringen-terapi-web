@@ -2,34 +2,10 @@ import React from "react";
 import { HeaderStyled } from "../../components/header/header.style";
 import { GlobalStyle } from "../../components/globals/global.style";
 import { GridStyled } from "../../components/grids/grid.style";
-import { MainColumnsStyled } from "../../components/containers/columns/mainPage/mainColumns.style";
+import { MainSectionOneStyled } from "../../components/containers/mainPage/section01/mainSectionOne.style";
 import { FooterStyled } from "../../components/footer/footer.style";
-import { TextStyled } from "../../components/text/text.style";
-import { CenterStyled } from "../../components/containers/center/center.style";
-import { MidSectionTextStyled } from "./homePage.style";
-import { Loader } from "../../components/containers/loader/loader";
-
-function MidSectionText(props) {
-  return (
-    <CenterStyled
-      className={props.className}
-      content={
-        <Loader
-          content={
-            <TextStyled
-              text={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-              }
-              sizeDesktop={2}
-              sizeTablet={3}
-              sizeMobile={4}
-            />
-          }
-        />
-      }
-    />
-  );
-}
+import { MainSectionTwoStyled } from "../../components/containers/mainPage/section02/mainSectionTwo.style";
+import { MainSectionThree } from "../../components/containers/mainPage/section03/mainSectionThree";
 
 function HomePage() {
   return (
@@ -39,8 +15,9 @@ function HomePage() {
           <GlobalStyle />
           <HeaderStyled />
           <div>
-            <MainColumnsStyled className={"my-4"} />
-            <MidSectionTextStyled />
+            <MainSectionOneStyled className={"my-4"} />
+            <MainSectionTwoStyled />
+            <MainSectionThree className={"my-6"} />
           </div>
           <FooterStyled />
         </>
@@ -49,4 +26,4 @@ function HomePage() {
   );
 }
 
-export { HomePage, MidSectionText };
+export { HomePage };

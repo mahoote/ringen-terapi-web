@@ -2,24 +2,23 @@ import React, { useState } from "react";
 import { TextStyled } from "../../../text/text.style";
 import { CenterStyled } from "../../center/center.style";
 import {
-  MainColumnTextAboutStyled,
-  MainColumnTextHeadlineStyled,
-} from "./mainColumns.style";
+  MainSectionOneAboutStyled,
+  MainSectionOneHeadlineStyled,
+} from "./mainSectionOne.style";
 import { standardColors } from "../../../../palettes/standardColors.style";
 import { BorderImageStyled } from "../../../images/borderImage/borderImage.style";
 import { BorderImagesStyled } from "../../../images/borderImages/borderImages.style";
 import { size } from "../../../../sizes/screenSize.style";
 import { useResize } from "../../../../hooks/screenDetection";
 import { Loader } from "../../loader/loader";
-
-const desktopBig = 2;
-const desktopSmall = 4;
-
-const tabletBig = 3;
-const tabletSmall = 5;
-
-const mobileBig = 3;
-const mobileSmall = 5;
+import {
+  desktopBig,
+  desktopSmall,
+  mobileBig,
+  mobileSmall,
+  tabletBig,
+  tabletSmall,
+} from "../../../globals/fontSizes";
 
 const exampleImages = [
   {
@@ -44,7 +43,7 @@ const exampleImages = [
   },
 ];
 
-function MainColumnTextAbout(props) {
+function MainSectionOneAbout(props) {
   return (
     <div className={props.className}>
       <TextStyled
@@ -75,7 +74,7 @@ function MainColumnTextAbout(props) {
   );
 }
 
-function MainColumnTextHeadline(props) {
+function MainSectionOneHeadline(props) {
   return (
     <div className={props.className}>
       <TextStyled
@@ -149,7 +148,7 @@ function MainColumnsDesktopImages() {
   );
 }
 
-function MainColumns(props) {
+function MainSectionOne(props) {
   const [isMobile, setIsMobile] = useState(false);
 
   function handleResize() {
@@ -165,7 +164,7 @@ function MainColumns(props) {
     <div className={props.className + " columns is-centered is-multiline "}>
       <Loader
         className={" column is-5 m-5 "}
-        content={<CenterStyled content={<MainColumnTextHeadlineStyled />} />}
+        content={<CenterStyled content={<MainSectionOneHeadlineStyled />} />}
       />
 
       {isMobile ? (
@@ -189,10 +188,10 @@ function MainColumns(props) {
 
       <Loader
         className={" column is-5 m-5 "}
-        content={<CenterStyled content={<MainColumnTextAboutStyled />} />}
+        content={<CenterStyled content={<MainSectionOneAboutStyled />} />}
       />
     </div>
   );
 }
 
-export { MainColumns, MainColumnTextHeadline, MainColumnTextAbout };
+export { MainSectionOne, MainSectionOneHeadline, MainSectionOneAbout };

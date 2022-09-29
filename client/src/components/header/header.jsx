@@ -13,19 +13,19 @@ import { size } from "../../sizes/screenSize.style";
 import { useResize } from "../../hooks/screenDetection";
 
 const navbarItems = [
-  { name: "Om meg", link: "about", type: "text" },
-  { name: "Tjenester", link: "services", type: "text" },
+  { name: "Om meg", pageLink: "/about", type: "text" },
+  { name: "Tjenester", pageLink: "/services", type: "text" },
   {
     name: "Priser",
-    link: "prices",
+    pageLink: "prices",
     type: "text",
     items: [
-      { name: "Individuell", link: "prices", type: "text" },
-      { name: "Familie", link: "prices", type: "text" },
-      { name: "Arbeidsplass", link: "prices", type: "text" },
+      { name: "Individuell", pageLink: "/prices", type: "text" },
+      { name: "Familie", pageLink: "/prices", type: "text" },
+      { name: "Arbeidsplass", pageLink: "/prices", type: "text" },
     ],
   },
-  { name: "Ta en prat", link: "contact", type: "button" },
+  { name: "Ta en prat", pageLink: "/contact", type: "button" },
 ];
 
 function NavbarLinkUnderline(props) {
@@ -34,7 +34,7 @@ function NavbarLinkUnderline(props) {
 
 function NavbarLink(props) {
   return (
-    <Link className={props.className + " navbar-item "} to={props.link}>
+    <Link className={props.className + " navbar-item "} to={props.pageLink}>
       {props.content}
       <NavbarLinkUnderlineStyled />
     </Link>
@@ -47,7 +47,7 @@ function NavbarItem(props) {
   if (item.type === "text" && item.items === undefined) {
     return (
       <NavbarLinkStyled
-        link={item.link}
+        pageLink={item.pageLink}
         type={item.type}
         content={<TextStyled text={item.name} size={props.itemSize} />}
       />
@@ -56,7 +56,7 @@ function NavbarItem(props) {
     return (
       <div className="navbar-item has-dropdown is-hoverable">
         <NavbarLinkStyled
-          link={item.link}
+          pageLink={item.pageLink}
           type={item.type}
           content={<TextStyled text={item.name} size={props.itemSize} />}
         />
@@ -71,7 +71,7 @@ function NavbarItem(props) {
   } else if (item.type === "button") {
     return (
       <NavbarLinkStyled
-        link={item.link}
+        pageLink={item.pageLink}
         type={item.type}
         content={
           <ButtonStyled
