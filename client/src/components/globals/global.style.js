@@ -2,6 +2,9 @@ import { createGlobalStyle } from "styled-components";
 import { standardColors } from "../../palettes/standardColors.style";
 
 const GlobalStyle = createGlobalStyle`
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     margin: 0;
     padding: 0;

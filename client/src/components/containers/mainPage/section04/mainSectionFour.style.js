@@ -7,10 +7,10 @@ const MainSectionFourStyled = styled(MainSectionFour)`
   background-color: ${standardColors.white1};
   position: relative;
   z-index: 10;
-  padding-bottom: 6em;
+  padding-bottom: 9em;
 
   @media screen and ${device.tablet} {
-    padding-top: 6em;
+    padding-top: 9em;
   }
 `;
 

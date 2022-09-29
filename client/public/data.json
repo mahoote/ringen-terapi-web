@@ -20,9 +20,9 @@
       "pageLink": "prices",
       "type": "text",
       "items": [
-        { "name": "Individuell", "pageLink": "/prices", "type": "text" },
-        { "name": "Familie", "pageLink": "/prices", "type": "text" },
-        { "name": "Arbeidsplass", "pageLink": "/prices", "type": "text" }
+        { "name": "Individuell", "pageLink": "/prices#individual-container", "type": "text" },
+        { "name": "Familie", "pageLink": "/prices#family-container", "type": "text" },
+        { "name": "Arbeidsplass", "pageLink": "/prices#workplace-container", "type": "text" }
       ]
     },
     { "name": "Ta en prat",

@@ -123,7 +123,7 @@ function MainColumnsDesktopImages() {
   return (
     <>
       <Loader
-        className={" column is-5 m-5"}
+        className={" column is-5 my-5 "}
         content={
           <CenterStyled
             content={
@@ -142,7 +142,7 @@ function MainColumnsDesktopImages() {
       />
 
       <Loader
-        className={" column is-5 m-5"}
+        className={" column is-5 my-5 "}
         content={
           <CenterStyled
             content={
@@ -182,7 +182,7 @@ function MainSectionOne(props) {
       }
     >
       <Loader
-        className={" column is-5 m-5 "}
+        className={" column is-5 my-5 "}
         content={<CenterStyled content={<MainSectionOneHeadlineStyled />} />}
       />
 
@@ -206,7 +206,7 @@ function MainSectionOne(props) {
       )}
 
       <Loader
-        className={" column is-5 m-5 "}
+        className={" column is-5 my-5 "}
         content={<CenterStyled content={<MainSectionOneAboutStyled />} />}
       />
     </div>

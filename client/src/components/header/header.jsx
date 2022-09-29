@@ -19,9 +19,20 @@ function NavbarLinkUnderline(props) {
 }
 
 function NavbarLink(props) {
+  const { pageLink, content } = props;
+
+  if (pageLink.toString().startsWith("#")) {
+    return (
+      <a href={pageLink} className={props.className + " navbar-item "}>
+        {content}
+        <NavbarLinkUnderlineStyled />
+      </a>
+    );
+  }
+
   return (
-    <Link className={props.className + " navbar-item "} to={props.pageLink}>
-      {props.content}
+    <Link className={props.className + " navbar-item "} to={pageLink}>
+      {content}
       <NavbarLinkUnderlineStyled />
     </Link>
   );
