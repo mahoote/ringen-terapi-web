@@ -21,12 +21,21 @@ const MainSectionTwoStyled = styled(MainSectionTwo)`
 
 const MainSectionTwoTextStyled = styled(MainSectionTwoText)`
   position: fixed;
-  left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  left: 15%;
+  transform: translate(-10%, -50%);
   z-index: 0;
 
-  transition: opacity 1s;
+  @media screen and ${device.mobileL} {
+    left: 30%;
+    transform: translate(-20%, -50%);
+  }
+  @media screen and ${device.laptop} {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  transition: opacity 0.5s;
 
   ${(props) =>
     props.showElement === false &&

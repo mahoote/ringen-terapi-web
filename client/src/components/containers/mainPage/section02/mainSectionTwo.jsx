@@ -31,7 +31,6 @@ function MainSectionTwo(props) {
     // console.log("Bottom end: " + bottomEnd);
 
     if (topStart < showThreshold && bottomEnd < showThreshold) {
-      console.log("Show");
       setShowElement(true);
     } else setShowElement(false);
   }, [topStart, bottomEnd]);
