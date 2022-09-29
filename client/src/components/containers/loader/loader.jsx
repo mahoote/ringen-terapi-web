@@ -3,11 +3,11 @@ import { LoaderContentStyled } from "./loader.style";
 import { useGetScreenDistance } from "../../../hooks/screenDetection";
 
 function LoaderContent(props) {
-  const { className, content, divShown, rf } = props;
+  const { className, content, rf } = props;
 
   return (
     <div className={className} ref={rf}>
-      {divShown ? content : null}
+      {content}
     </div>
   );
 }

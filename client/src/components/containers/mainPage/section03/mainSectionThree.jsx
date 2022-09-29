@@ -110,7 +110,11 @@ function MainSectionThreeServices() {
       content={
         <div className={"columns is-multiline is-centered"}>
           {services.map((service, i) => (
-            <MainSectionThreeServiceStyled i={i} service={service} />
+            <Loader
+              content={
+                <MainSectionThreeServiceStyled i={i} service={service} />
+              }
+            />
           ))}
         </div>
       }
