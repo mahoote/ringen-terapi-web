@@ -81,7 +81,7 @@ function ContactInfoContent(props) {
         <CenterStyled
           className={props.className}
           content={
-            <div className={"my-6"}>
+            <div className={"my-6 has-text-centered"}>
               <TextStyled
                 text={data.contactPage.contactInfo.line1.text}
                 sizeDesktop={desktopBig}
