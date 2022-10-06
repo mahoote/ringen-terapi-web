@@ -7,17 +7,12 @@ import { PageLayout } from "../../components/containers/pageLayout/pageLayout";
 
 function HomePage(props) {
   return (
-    <PageLayout
-      className={props.className}
-      content={
-        <>
-          <MainSectionOneStyled className={"py-4"} />
-          <MainSectionTwoStyled />
-          <MainSectionThreeStyled className={"py-6"} />
-          <MainSectionFourStyled />
-        </>
-      }
-    />
+    <PageLayout className={props.className}>
+      <MainSectionOneStyled className={"py-4"} />
+      <MainSectionTwoStyled />
+      <MainSectionThreeStyled className={"py-6"} />
+      <MainSectionFourStyled />
+    </PageLayout>
   );
 }
 
