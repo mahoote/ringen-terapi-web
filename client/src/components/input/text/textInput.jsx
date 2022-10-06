@@ -4,7 +4,7 @@ import { TextInputTagStyled } from "./textInput.style";
 function TextInputTag(props) {
   return (
     <input
-      className={props.className + " is-size-4-tablet is-size-5-mobile p-5 "}
+      className={props.className + " is-size-5-tablet is-size-6-mobile p-5 "}
       type={props.type}
       required={props.required}
       placeholder={props.placeholder}

@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { ContactForm, FormInputs } from "./contactForm";
+import { ContactFormContent, FormInputs } from "./contactForm";
 import { device } from "../../../../sizes/screenSize.style";
 
-const ContactFormStyled = styled(ContactForm)`
+const ContactFormContentStyled = styled(ContactFormContent)`
   background-color: white;
 `;
 
@@ -12,4 +12,4 @@ const FormInputsStyled = styled(FormInputs)`
   }
 `;
 
-export { ContactFormStyled, FormInputsStyled };
+export { ContactFormContentStyled, FormInputsStyled };

@@ -11,10 +11,14 @@ import {
 import React from "react";
 import { CenterStyled } from "../../center/center.style";
 import { TextInput } from "../../../input/text/textInput";
-import { FormInputsStyled } from "./contactForm.style";
+import {
+  ContactFormContentStyled,
+  FormInputsStyled,
+} from "./contactForm.style";
 import { TextAreaInput } from "../../../input/textarea/textAreaInput";
 import { ButtonStyled } from "../../../button/button.style";
 import { useNavigate } from "react-router-dom";
+import { Loader } from "../../loader/loader";
 
 function Heading() {
   return (
@@ -95,18 +99,30 @@ function FormInputs(props) {
   );
 }
 
-function ContactForm(props) {
+function ContactFormContent(props) {
   return (
-    <CenterStyled
-      className={props.className}
+    <Loader
       content={
-        <div className={"my-6"}>
-          <Heading />
-          <FormInputsStyled />
-        </div>
+        <CenterStyled
+          className={props.className}
+          content={
+            <div className={"my-6"}>
+              <Heading />
+              <FormInputsStyled />
+            </div>
+          }
+        />
       }
     />
   );
 }
 
-export { ContactForm, FormInputs };
+function ContactForm(props) {
+  return (
+    <div className={props.className}>
+      <ContactFormContentStyled />
+    </div>
+  );
+}
+
+export { ContactForm, ContactFormContent, FormInputs };

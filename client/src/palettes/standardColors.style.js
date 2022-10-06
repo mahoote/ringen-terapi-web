@@ -1,5 +1,5 @@
 const standardColors = {
-  white1: "#FFFAF5",
+  white1: "#fff9ee",
   black1: "#14302d",
   black2: "#14302D",
   green1: "#285F5A",
