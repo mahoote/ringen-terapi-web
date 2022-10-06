@@ -7,8 +7,8 @@ export function ContactPage(props) {
     <PageLayout
       className={props.className}
       content={
-        <div className={"columns is-centered is-multiline"}>
-          <ContactFormStyled className={"column is-6-desktop mx-6"} />
+        <div className={"columns is-centered is-multiline my-6"}>
+          <ContactFormStyled className={"column is-6-desktop mx-5"} />
         </div>
       }
     />

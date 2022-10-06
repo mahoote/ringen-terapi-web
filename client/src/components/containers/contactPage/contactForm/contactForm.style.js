@@ -10,8 +10,6 @@ const FormInputsStyled = styled(FormInputs)`
   @media screen and ${device.tablet} {
     margin: 0 3rem;
   }
-
-  margin: 0 0.25rem;
 `;
 
 export { ContactFormStyled, FormInputsStyled };

@@ -13,12 +13,13 @@ import { CenterStyled } from "../../center/center.style";
 import { TextInput } from "../../../input/text/textInput";
 import { FormInputsStyled } from "./contactForm.style";
 import { TextAreaInput } from "../../../input/textarea/textAreaInput";
+import { ButtonStyled } from "../../../button/button.style";
+import { useNavigate } from "react-router-dom";
 
 function Heading() {
   return (
-    <div className={"has-text-centered mb-4"}>
+    <div className={"has-text-centered"}>
       <TextStyled
-        className={"my-4"}
         text={data.contactPage.contactForm.line1.text}
         sizeDesktop={desktopBig}
         sizeTablet={tabletBig}
@@ -26,6 +27,7 @@ function Heading() {
         textWeight={"bold"}
       />
       <TextStyled
+        className={"my-4"}
         text={data.contactPage.contactForm.line2.text}
         sizeDesktop={desktopSmall}
         sizeTablet={tabletSmall}
@@ -36,7 +38,8 @@ function Heading() {
 }
 
 function FormInput(props) {
-  const mandatoryString = props.value.mandatory ? " *" : "";
+  const required = props.value.required;
+  const requiredString = required ? " *" : "";
   const sizeString = `is-${props.value.size}` || "is-12";
 
   const type = props.value.type;
@@ -45,7 +48,8 @@ function FormInput(props) {
     return (
       <TextAreaInput
         className={" column " + sizeString}
-        placeholder={props.value.text + mandatoryString}
+        required={required}
+        placeholder={props.value.text + requiredString}
       />
     );
   }
@@ -54,20 +58,40 @@ function FormInput(props) {
     <TextInput
       className={" column " + sizeString}
       type={type}
-      placeholder={props.value.text + mandatoryString}
+      required={required}
+      placeholder={props.value.text + requiredString}
     />
   );
 }
 
 function FormInputs(props) {
+  const navigate = useNavigate();
   const formValues = data.contactPage.contactForm.formValues;
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("Send");
+    navigate("/");
+  }
+
   return (
-    <div className={props.className + " columns is-centered is-multiline "}>
+    <form
+      className={
+        props.className + " columns is-centered is-multiline has-text-centered "
+      }
+      onSubmit={handleSubmit}
+    >
       {formValues.map((value, i) => (
         <FormInput key={i} value={value} />
       ))}
-    </div>
+      <ButtonStyled
+        className={"py-4 px-6"}
+        text={"Send"}
+        borderWidth={"2.2px"}
+        textSize={3}
+        textSizeTouch={5}
+      />
+    </form>
   );
 }
 

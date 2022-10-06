@@ -7,6 +7,7 @@ function TextAreaInputTag(props) {
     <TextareaAutosize
       minRows={4}
       className={props.className + " is-size-4-tablet is-size-5-mobile p-5 "}
+      required={props.required}
       placeholder={props.placeholder}
     />
   );
@@ -15,7 +16,7 @@ function TextAreaInputTag(props) {
 function TextAreaInput(props) {
   return (
     <div className={props.className + " my-4 "}>
-      <TextAreaInputTagStyled placeholder={props.placeholder} />
+      <TextAreaInputTagStyled {...props} className={""} />
     </div>
   );
 }

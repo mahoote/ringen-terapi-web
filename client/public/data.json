@@ -123,42 +123,42 @@
         "text": "La oss ta en prat"
       },
       "line2": {
-        "text": "Jeg svarer deg innen antall dager."
+        "text": "Jeg svarer deg innen ANTALL dager."
       },
       "formValues": [
         {
           "text": "Fullt navn",
-          "mandatory": true,
+          "required": true,
           "type": "text",
           "size": 12
         },
         {
           "text": "Epost",
-          "mandatory": true,
+          "required": true,
           "type": "email",
           "size": 6
         },
         {
           "text": "Telefon",
-          "mandatory": false,
+          "required": false,
           "type": "tel",
           "size": 6
         },
         {
           "text": "Hvordan hørte du om meg?",
-          "mandatory": true,
+          "required": true,
           "type": "text",
           "size": 12
         },
         {
           "text": "Emne",
-          "mandatory": true,
+          "required": true,
           "type": "text",
           "size": 12
         },
         {
           "text": "Hvordan kan jeg hjelpe?",
-          "mandatory": true,
+          "required": true,
           "type": "textarea",
           "size": 12
         }
