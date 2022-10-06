@@ -34,16 +34,6 @@ const images = [
     offsetXMobile: "2em",
     offsetYMobile: "2em",
   },
-  {
-    src: require("../../../../../public/images/image02.jpg"),
-    alt: data.homePage.section1.image2.description,
-    width: data.homePage.section1.image2.width,
-    widthMobile: data.homePage.section1.image2.widthMobile,
-    offsetX: "2em",
-    offsetY: "-3em",
-    offsetXMobile: "2em",
-    offsetYMobile: "2em",
-  },
 ];
 
 function ContactInfoLine(props) {
