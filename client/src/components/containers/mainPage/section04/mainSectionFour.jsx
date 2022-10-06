@@ -16,6 +16,7 @@ import { BorderImageStyled } from "../../../images/borderImage/borderImage.style
 import { standardColors } from "../../../../palettes/standardColors.style";
 
 import data from "../../../../../public/data.json";
+import { Link } from "react-router-dom";
 
 // Same image as section three. Only shows on mobile screen.
 const images = [
@@ -82,13 +83,15 @@ function MainSectionFour(props) {
             <div className={"column is-3-widescreen is-12 px-5"}>
               <CenterStyled
                 content={
-                  <ButtonStyled
-                    className={"py-4"}
-                    text={"Kontakt meg"}
-                    borderWidth={"2.2px"}
-                    textSize={2}
-                    textSizeTouch={3}
-                  />
+                  <Link to={data.links[3].pageLink}>
+                    <ButtonStyled
+                      className={"py-4"}
+                      text={data.homePage.section4.contact.button.name}
+                      borderWidth={"2.2px"}
+                      textSize={2}
+                      textSizeTouch={3}
+                    />
+                  </Link>
                 }
               />
             </div>

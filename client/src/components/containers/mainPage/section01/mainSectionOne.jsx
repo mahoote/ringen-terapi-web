@@ -22,6 +22,7 @@ import {
 import { ButtonStyled } from "../../../button/button.style";
 
 import data from "../../../../../public/data.json";
+import { Link } from "react-router-dom";
 
 const images = [
   {
@@ -109,11 +110,13 @@ function MainSectionOneHeadline(props) {
           className={"my-6"}
           style={{ backgroundColor: standardColors.black1 }}
         />
-        <ButtonStyled
-          text={"Ta en prat"}
-          borderWidth={"2.3px"}
-          textSize={"4"}
-        />
+        <Link to={data.links[3].pageLink}>
+          <ButtonStyled
+            text={data.links[3].name}
+            borderWidth={"2.3px"}
+            textSize={"4"}
+          />
+        </Link>
       </div>
     </div>
   );

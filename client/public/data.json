@@ -1,10 +1,19 @@
 {
   "websiteName": "RingenTerapi",
-  "info": {
-    "address": "Adresse 123, 123 Oslo",
-    "email": "epostadresse@gmail.com",
-    "phone": "+4712345678"
-  },
+  "info": [
+    {
+      "text": "Addresse 123, 123 Oslo",
+      "icon": "location"
+    },
+    {
+      "text": "epostadresse@gmail.com",
+      "icon": "email"
+    },
+    {
+      "text": "+47 123 45 678",
+      "icon": "phone"
+    }
+  ],
   "links": [
     {
       "name": "Om meg",
@@ -93,6 +102,9 @@
         },
         "line2": {
           "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        "button": {
+          "name": "Kontakt meg"
         }
       }
     }
@@ -121,21 +133,7 @@
     "contactInfo": {
       "line1": {
         "text": "Min info"
-      },
-      "info": [
-        {
-          "text": "Addresse 123, 123 Oslo",
-          "icon": "location"
-        },
-        {
-          "text": "epostadresse@gmail.com",
-          "icon": "email"
-        },
-        {
-          "text": "+47 123 45 678",
-          "icon": "phone"
-        }
-      ]
+      }
     },
     "contactForm": {
       "line1": {

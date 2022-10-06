@@ -32,9 +32,7 @@ function Footer(props) {
           sizeMobile={4}
         />
         <div className={"mt-5"}>
-          <TextStyled text={data.info.address} />
-          <TextStyled text={data.info.email} />
-          <TextStyled text={data.info.phone} />
+          <InfoLines />
         </div>
       </div>
     );
@@ -82,14 +80,20 @@ function Footer(props) {
     );
   }
 
-  function FooterLeft() {
+  function InfoLines() {
+    const info = data.info;
+
     return (
       <div>
-        <TextStyled text={data.info.address} sizeDesktop={5} />
-        <TextStyled text={data.info.email} sizeDesktop={5} />
-        <TextStyled text={data.info.phone} sizeDesktop={5} />
+        {info.map((line, i) => (
+          <TextStyled key={i} text={line.text} sizeDesktop={5} />
+        ))}
       </div>
     );
+  }
+
+  function FooterLeft() {
+    return <InfoLines />;
   }
 
   return (

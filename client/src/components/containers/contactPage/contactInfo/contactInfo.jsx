@@ -73,7 +73,7 @@ function ContactInfoLine(props) {
 }
 
 function ContactInfoContent(props) {
-  const info = data.contactPage.contactInfo.info;
+  const info = data.info;
 
   return (
     <Loader
