@@ -116,5 +116,53 @@
       "list": ["Punkt", "Punkt", "Punkt", "Punkt"],
       "pageLink": "/services"
     }
-  ]
+  ],
+  "contactPage": {
+    "contactForm": {
+      "line1": {
+        "text": "La oss ta en prat"
+      },
+      "line2": {
+        "text": "Jeg svarer deg innen antall dager."
+      },
+      "formValues": [
+        {
+          "text": "Fullt navn",
+          "mandatory": true,
+          "type": "text",
+          "size": 12
+        },
+        {
+          "text": "Epost",
+          "mandatory": true,
+          "type": "email",
+          "size": 6
+        },
+        {
+          "text": "Telefon",
+          "mandatory": false,
+          "type": "tel",
+          "size": 6
+        },
+        {
+          "text": "Hvordan hørte du om meg?",
+          "mandatory": true,
+          "type": "text",
+          "size": 12
+        },
+        {
+          "text": "Emne",
+          "mandatory": true,
+          "type": "text",
+          "size": 12
+        },
+        {
+          "text": "Hvordan kan jeg hjelpe?",
+          "mandatory": true,
+          "type": "textarea",
+          "size": 12
+        }
+      ]
+    }
+  }
 }
