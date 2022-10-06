@@ -118,6 +118,25 @@
     }
   ],
   "contactPage": {
+    "contactInfo": {
+      "line1": {
+        "text": "Min info"
+      },
+      "info": [
+        {
+          "text": "Addresse 123, 123 Oslo",
+          "icon": "location"
+        },
+        {
+          "text": "epostadresse@gmail.com",
+          "icon": "email"
+        },
+        {
+          "text": "+47 123 45 678",
+          "icon": "phone"
+        }
+      ]
+    },
     "contactForm": {
       "line1": {
         "text": "La oss ta en prat"
