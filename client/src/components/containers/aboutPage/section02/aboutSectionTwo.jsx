@@ -38,12 +38,18 @@ function AboutSectionTwoParagraph(props) {
   return (
     <Loader
       content={
-        <div className={"my-6 py-3"}>
-          <hr style={{ backgroundColor: standardColors.brown4 }} />
+        <div className={"my-6 py-1"}>
           <div className={"has-text-centered my-6"}>
+            <hr
+              style={{
+                backgroundColor: standardColors.brown4,
+                maxWidth: "60%",
+                margin: "3em auto",
+              }}
+            />
             <TextStyled
               text={props.headline}
-              sizeDesktop={desktopBig}
+              sizeDesktop={tabletBig}
               sizeTablet={tabletBig}
               sizeMobile={mobileBig}
               textWeight={"bold"}

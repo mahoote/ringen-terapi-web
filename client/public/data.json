@@ -64,7 +64,7 @@
       },
       "image1": {
         "description": "This is an example image",
-        "width": "400px",
+        "width": "500px",
         "widthMobile": "300px"
       },
       "image2": {

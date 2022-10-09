@@ -26,7 +26,7 @@ import { Link } from "react-router-dom";
 
 const images = [
   {
-    src: require("../../../../../public/images/image01.jpg"),
+    src: require("../../../../../public/images/people01.jpg"),
     alt: data.homePage.section1.image1.description,
     width: data.homePage.section1.image1.width,
     widthMobile: data.homePage.section1.image1.widthMobile,
