@@ -4,7 +4,6 @@ import { HomePageStyled } from "./pages/homePage/homePage.style";
 import { ErrorPage } from "./pages/errorPage/errorPage";
 import { ContactPage } from "./pages/contactPage/contactPage";
 import { AboutPage } from "./pages/aboutPage/aboutPage";
-import { TextStyled } from "./components/text/text.style";
 
 const ScrollToTop = (props) => {
   const location = useLocation();
@@ -17,16 +16,6 @@ const ScrollToTop = (props) => {
 
 export default ScrollToTop;
 
-function Test() {
-  const sentence = "This is a test.\n\nHere is a new line.";
-
-  return (
-    <div>
-      <TextStyled text={sentence} />
-    </div>
-  );
-}
-
 export function App() {
   return (
     <BrowserRouter>
@@ -35,7 +24,6 @@ export function App() {
           <Route path={"/"} element={<HomePageStyled />} />
           <Route path={"/contact"} element={<ContactPage />} />
           <Route path={"/about"} element={<AboutPage />} />
-          <Route path={"/test"} element={<Test />} />
           <Route path={"/*"} element={<ErrorPage />} />
         </Routes>
       </ScrollToTop>
