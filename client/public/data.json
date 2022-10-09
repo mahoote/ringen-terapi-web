@@ -220,11 +220,11 @@
         },
         {
           "headline": {
-            "text": "Språk"
+            "text": "Annet"
           },
           "list": [
-            "Eksempel språk 1",
-            "Mer eksempel språk"
+            "Eksempel 1",
+            "Mer eksempel på annet"
           ]
         }
       ]
