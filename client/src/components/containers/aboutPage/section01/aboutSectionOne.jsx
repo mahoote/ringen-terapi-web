@@ -99,7 +99,7 @@ function AboutSectionOne(props) {
                 <BorderImageStyled
                   src={images[0].src}
                   alt={images[0].alt}
-                  backgroundColor={standardColors.green1}
+                  backgroundColor={standardColors.blue1}
                   width={images[0].width}
                   padding={"1em"}
                   offsetY={images[0].offsetY}
@@ -116,7 +116,7 @@ function AboutSectionOne(props) {
             <div
               className={" is-hidden-tablet "}
               style={{
-                backgroundColor: standardColors.green1,
+                backgroundColor: standardColors.blue1,
               }}
             >
               <CenterStyled
@@ -124,7 +124,7 @@ function AboutSectionOne(props) {
                   <BorderImageStyled
                     src={images[0].src}
                     alt={images[0].alt}
-                    backgroundColor={standardColors.green1}
+                    backgroundColor={standardColors.blue1}
                     width={images[0].width}
                     padding={"1em"}
                     offsetY={images[0].offsetYMobile}

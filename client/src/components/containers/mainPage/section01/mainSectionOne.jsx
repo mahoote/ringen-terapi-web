@@ -97,7 +97,7 @@ function MainSectionOneHeadline(props) {
           data.homePage.section1.heading.line2.highlightPosStart
         }
         highlightPosEnd={data.homePage.section1.heading.line2.highlightPosEnd}
-        highlightColor={standardColors.green1}
+        highlightColor={standardColors.blue1}
       />
       <TextStyled
         text={data.homePage.section1.heading.line3.text}
@@ -133,7 +133,7 @@ function MainColumnsDesktopImages() {
               <BorderImageStyled
                 src={images[0].src}
                 alt={images[0].alt}
-                backgroundColor={standardColors.green1}
+                backgroundColor={standardColors.blue1}
                 width={images[0].width}
                 padding={"1em"}
                 offsetY={images[0].offsetY}
@@ -197,7 +197,7 @@ function MainSectionOne(props) {
               content={
                 <BorderImagesStyled
                   images={images}
-                  backgroundColor={standardColors.green1}
+                  backgroundColor={standardColors.blue1}
                   height={"500px"}
                 />
               }

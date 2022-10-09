@@ -123,7 +123,7 @@ function Header(props) {
           <Link to={"/"}>
             <TextStyled
               text={data.websiteName}
-              color={standardColors.green1}
+              color={standardColors.blue1}
               textWeight={"semibold"}
               size={2}
               sizeTouch={3}

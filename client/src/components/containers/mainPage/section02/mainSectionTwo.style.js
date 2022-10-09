@@ -4,7 +4,7 @@ import { device } from "../../../../sizes/screenSize.style";
 import { MainSectionTwo, MainSectionTwoText } from "./mainSectionTwo";
 
 const MainSectionTwoStyled = styled(MainSectionTwo)`
-  color: ${standardColors.green3};
+  color: ${standardColors.blue3};
   background-color: transparent;
 
   padding: 20em 2em;

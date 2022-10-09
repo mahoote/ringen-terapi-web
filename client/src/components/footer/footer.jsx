@@ -26,7 +26,7 @@ function Footer(props) {
       <div>
         <TextStyled
           text={data.websiteName}
-          color={standardColors.green3}
+          color={standardColors.blue3}
           textWeight={"bold"}
           sizeTablet={3}
           sizeMobile={4}
@@ -60,7 +60,7 @@ function Footer(props) {
       <div>
         <TextStyled
           text={data.websiteName}
-          color={standardColors.green3}
+          color={standardColors.blue3}
           textWeight={"bold"}
           sizeDesktop={2}
           sizeTablet={3}

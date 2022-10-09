@@ -23,9 +23,9 @@ const ButtonStyled = styled(Button)`
 
   &:hover {
     cursor: pointer;
-    background-color: ${standardColors.green1};
+    background-color: ${standardColors.blue1};
     color: white;
-    border-color: ${standardColors.green1};
+    border-color: ${standardColors.blue1};
   }
 `;
 
