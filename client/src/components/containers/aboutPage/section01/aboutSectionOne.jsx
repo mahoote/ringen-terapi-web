@@ -28,7 +28,7 @@ const images = [
     width: data.aboutPage.section1.image1.width,
     widthMobile: data.aboutPage.section1.image1.widthMobile,
     offsetX: "-2em",
-    offsetY: "1em",
+    offsetY: "0.5em",
     offsetXMobile: "-0em",
     offsetYMobile: "-3em",
   },
@@ -137,7 +137,7 @@ function AboutSectionOne(props) {
         />
       ) : null}
       <Loader
-        className={" column is-12 my-5 pb-6"}
+        className={" column is-11 my-5 pb-6"}
         content={<CenterStyled content={<AboutSectionOneParagraphStyled />} />}
       />
     </div>

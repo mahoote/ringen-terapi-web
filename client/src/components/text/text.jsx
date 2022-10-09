@@ -71,14 +71,16 @@ function Text(props) {
   const highlightPosEnd = props.highlightPosEnd - 1;
 
   const hasHighlight =
-    highlightPosStart !== undefined &&
-    highlightPosEnd !== undefined &&
+    !isNaN(highlightPosStart) &&
+    !isNaN(highlightPosEnd) &&
     highlightPosStart !== -1 &&
     highlightPosEnd !== -1;
 
   const linkTo = props.linkTo || null;
 
   function TextContent() {
+    const texts = props.text.split("\n");
+
     return hasHighlight ? (
       <TextHighlight
         {...props}
@@ -87,12 +89,19 @@ function Text(props) {
         highlightPosEnd={highlightPosEnd}
       />
     ) : (
-      props.text
+      texts.map((text, i) => (
+        <span key={i}>
+          <p>
+            {text}
+            <br />
+          </p>
+        </span>
+      ))
     );
   }
 
   return (
-    <p
+    <div
       className={
         props.className +
         sizeClass +
@@ -108,7 +117,7 @@ function Text(props) {
       ) : (
         <TextContent />
       )}
-    </p>
+    </div>
   );
 }
 

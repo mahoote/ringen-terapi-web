@@ -6,7 +6,7 @@ import { ContactForm } from "../../components/containers/contactPage/contactForm
 export function ContactPage(props) {
   return (
     <PageLayout className={props.className}>
-      <div className={"columns is-centered is-multiline my-2"}>
+      <div className={"columns is-centered is-multiline my-2 mb-6"}>
         <ContactInfo className={"column is-4-desktop is-12-tablet"} />
         <ContactForm className={"column is-6-desktop is-12-touch"} />
       </div>
