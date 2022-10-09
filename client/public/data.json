@@ -83,12 +83,12 @@
         }
       },
       "image1": {
-        "description": "Two people in conversation therapy.",
+        "description": "To personer som har samtaleterapi.",
         "width": "500px",
         "widthMobile": "300px"
       },
       "image2": {
-        "description": "An image of Lin Ruud.",
+        "description": "Lin Ruud, hovedterapauten.",
         "width": "400px",
         "widthMobile": "300px"
       }
@@ -110,7 +110,7 @@
         }
       },
       "image1": {
-        "description": "A person breathing.",
+        "description": "To sofaer. En har en laptop på seg. Ved siden av, står en stor plante",
         "width": "400px",
         "widthMobile": "200px"
       }
@@ -135,7 +135,7 @@
         "text": "Min info"
       },
       "image1": {
-        "description": "Two chairs in a room.",
+        "description": "To stoler i et rom. En plante mellom dem. Bildet gir en følelse av beroligende stemning.",
         "width": "400px",
         "widthMobile": "200px"
       }
@@ -199,7 +199,7 @@
         "text": "Scelerisque fermentum dui faucibus in ornare. Arcu non odio euismod lacinia at quis risus sed vulputate. In massa tempor nec feugiat nisl pretium fusce id velit. \n\nUltricies lacus sed turpis tincidunt id aliquet risus feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Porttitor leo a diam sollicitudin tempor id. \n\nOdio tempor orci dapibus ultrices. In ornare quam viverra orci sagittis eu volutpat odio. Sit amet massa vitae tortor condimentum lacinia. Enim nulla aliquet porttitor lacus luctus. Quisque non tellus orci ac auctor augue mauris augue neque. Auctor augue mauris augue neque. Nisi est sit amet facilisis magna.\n"
       },
       "image1": {
-        "description": "An image of Lin Ruud.",
+        "description": "Lin Ruud, hovedterapauten.",
         "width": "400px",
         "widthMobile": "250px"
       }
