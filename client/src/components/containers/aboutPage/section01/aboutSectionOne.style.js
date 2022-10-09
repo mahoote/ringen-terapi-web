@@ -9,7 +9,6 @@ import {
 const AboutSectionOneStyled = styled(AboutSectionOne)`
   background-color: ${standardColors.white1};
   position: relative;
-  z-index: 10;
 `;
 
 const AboutSectionOneIntroStyled = styled(AboutSectionOneIntro)`

@@ -36,7 +36,7 @@ const images = [
     offsetYMobile: "-1em",
   },
   {
-    src: require("../../../../../public/images/image02.jpg"),
+    src: require("../../../../../public/images/lin01.jpg"),
     alt: data.homePage.section1.image2.description,
     width: data.homePage.section1.image2.width,
     widthMobile: data.homePage.section1.image2.widthMobile,

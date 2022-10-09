@@ -25,10 +25,10 @@ import { Loader } from "../../loader/loader";
 
 const images = [
   {
-    src: require("../../../../../public/images/image02.jpg"),
-    alt: data.homePage.section1.image2.description,
-    width: data.homePage.section1.image2.width,
-    widthMobile: data.homePage.section1.image2.widthMobile,
+    src: require("../../../../../public/images/chairs01.jpg"),
+    alt: data.contactPage.contactInfo.image1.description,
+    width: data.contactPage.contactInfo.image1.width,
+    widthMobile: data.contactPage.contactInfo.image1.widthMobile,
     offsetX: "2em",
     offsetY: "-3em",
     offsetXMobile: "2em",

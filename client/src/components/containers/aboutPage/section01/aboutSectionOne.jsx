@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextStyled } from "../../../text/text.style";
 import { CenterStyled } from "../../center/center.style";
 import { Loader } from "../../loader/loader";
@@ -18,15 +18,19 @@ import {
 } from "./aboutSectionOne.style";
 import { BorderImageStyled } from "../../../images/borderImage/borderImage.style";
 import { standardColors } from "../../../../palettes/standardColors.style";
+import { size } from "../../../../sizes/screenSize.style";
+import { useResize } from "../../../../hooks/screenDetection";
 
 const images = [
   {
-    src: require("../../../../../public/images/image01.jpg"),
-    alt: data.homePage.section1.image1.description,
-    width: data.homePage.section1.image1.width,
-    widthMobile: data.homePage.section1.image1.widthMobile,
-    offsetX: "0em",
-    offsetY: "2em",
+    src: require("../../../../../public/images/lin02.jpg"),
+    alt: data.aboutPage.section1.image1.description,
+    width: data.aboutPage.section1.image1.width,
+    widthMobile: data.aboutPage.section1.image1.widthMobile,
+    offsetX: "-2em",
+    offsetY: "1em",
+    offsetXMobile: "-0em",
+    offsetYMobile: "-3em",
   },
 ];
 
@@ -65,6 +69,17 @@ function AboutSectionOneParagraph(props) {
 }
 
 function AboutSectionOne(props) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  function handleResize() {
+    if (window.innerWidth >= size.tablet) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+  }
+  useResize(handleResize);
+
   return (
     <div
       className={
@@ -72,27 +87,55 @@ function AboutSectionOne(props) {
       }
     >
       <Loader
-        className={" column is-5 mb-5 "}
+        className={" column is-5 "}
         content={<CenterStyled content={<AboutSectionOneIntroStyled />} />}
       />
       <Loader
-        className={" column is-5 my-5 "}
+        className={" column is-5 mt-5 "}
         content={
           <CenterStyled
             content={
-              <BorderImageStyled
-                src={images[0].src}
-                alt={images[0].alt}
-                backgroundColor={standardColors.green1}
-                width={images[0].width}
-                padding={"1em"}
-                offsetY={images[0].offsetY}
-                offsetX={images[0].offsetX}
-              />
+              isMobile ? null : (
+                <BorderImageStyled
+                  src={images[0].src}
+                  alt={images[0].alt}
+                  backgroundColor={standardColors.green1}
+                  width={images[0].width}
+                  padding={"1em"}
+                  offsetY={images[0].offsetY}
+                  offsetX={images[0].offsetX}
+                />
+              )
             }
           />
         }
       />
+      {isMobile ? (
+        <Loader
+          content={
+            <div
+              className={" is-hidden-tablet "}
+              style={{
+                backgroundColor: standardColors.green1,
+              }}
+            >
+              <CenterStyled
+                content={
+                  <BorderImageStyled
+                    src={images[0].src}
+                    alt={images[0].alt}
+                    backgroundColor={standardColors.green1}
+                    width={images[0].width}
+                    padding={"1em"}
+                    offsetY={images[0].offsetYMobile}
+                    offsetX={images[0].offsetXMobile}
+                  />
+                }
+              />
+            </div>
+          }
+        />
+      ) : null}
       <Loader
         className={" column is-12 my-5 pb-6"}
         content={<CenterStyled content={<AboutSectionOneParagraphStyled />} />}
