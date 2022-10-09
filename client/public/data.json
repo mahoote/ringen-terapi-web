@@ -181,5 +181,15 @@
         }
       ]
     }
+  },
+  "aboutPage": {
+    "section1": {
+      "line1": {
+        "text": "Hello"
+      },
+      "line2": {
+        "text": "Im lin"
+      }
+    }
   }
 }

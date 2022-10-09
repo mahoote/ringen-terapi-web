@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { HomePageStyled } from "./pages/homePage/homePage.style";
 import { ErrorPage } from "./pages/errorPage/errorPage";
 import { ContactPage } from "./pages/contactPage/contactPage";
+import { AboutPage } from "./pages/aboutPage/aboutPage";
 
 const ScrollToTop = (props) => {
   const location = useLocation();
@@ -22,6 +23,7 @@ export function App() {
         <Routes>
           <Route path={"/"} element={<HomePageStyled />} />
           <Route path={"/contact"} element={<ContactPage />} />
+          <Route path={"/about"} element={<AboutPage />} />
           <Route path={"/*"} element={<ErrorPage />} />
         </Routes>
       </ScrollToTop>
