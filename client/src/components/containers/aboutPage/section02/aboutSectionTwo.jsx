@@ -38,7 +38,7 @@ function AboutSectionTwoParagraph(props) {
   return (
     <Loader
       content={
-        <div className={"my-6 py-4"}>
+        <div className={"my-6 py-3"}>
           <hr style={{ backgroundColor: standardColors.brown4 }} />
           <div className={"has-text-centered my-6"}>
             <TextStyled
@@ -65,7 +65,7 @@ function AboutSectionTwoContent(props) {
     <CenterStyled
       content={
         <div className={props.className}>
-          <div className={"has-text-centered py-5"}>
+          <div className={"has-text-centered pt-5 pb-0"}>
             <Loader
               content={
                 <TextStyled

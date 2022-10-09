@@ -6,7 +6,7 @@ import { AboutSectionTwoStyled } from "../../components/containers/aboutPage/sec
 function AboutPage() {
   return (
     <PageLayout>
-      <AboutSectionOne className={"my-1"} />
+      <AboutSectionOne />
       <AboutSectionTwoStyled className={"py-6"} />
     </PageLayout>
   );

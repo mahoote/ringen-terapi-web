@@ -72,7 +72,7 @@ function AboutSectionOne(props) {
       }
     >
       <Loader
-        className={" column is-5 my-5 "}
+        className={" column is-5 mb-5 "}
         content={<CenterStyled content={<AboutSectionOneIntroStyled />} />}
       />
       <Loader
