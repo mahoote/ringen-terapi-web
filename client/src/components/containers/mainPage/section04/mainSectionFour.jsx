@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 // Same image as section three. Only shows on mobile screen.
 const images = [
   {
-    src: require("../../../../../public/images/image03.jpg"),
+    src: require("../../../../../public/images/couch01.jpg"),
     alt: data.homePage.section3.image1.description,
     width: data.homePage.section3.image1.width,
     widthMobile: data.homePage.section3.image1.widthMobile,
