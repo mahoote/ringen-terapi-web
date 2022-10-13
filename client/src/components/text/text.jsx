@@ -113,7 +113,11 @@ function Text(props) {
       }
     >
       {linkTo ? (
-        <TextLinkStyled to={linkTo} TextContent={<TextContent />} />
+        <TextLinkStyled
+          to={linkTo}
+          TextContent={<TextContent />}
+          textWeight={props.textWeight}
+        />
       ) : (
         <TextContent />
       )}

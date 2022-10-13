@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Text, TextContentSpan, TextLink } from "./text";
 
 const TextStyled = styled(Text)`
@@ -12,7 +12,16 @@ const TextContentSpanStyled = styled(TextContentSpan)`
 
 const TextLinkStyled = styled(TextLink)`
   &:hover {
-    font-weight: bold;
+    ${(props) =>
+      (props.textWeight === "bold" &&
+        css`
+          font-weight: initial;
+        `) ||
+      props.textWeight === undefined ||
+      (props.textWeight === "normal" &&
+        css`
+          font-weight: bold;
+        `)}
   }
 
   color: inherit !important;

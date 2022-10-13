@@ -5,7 +5,7 @@ import { ServicesSectionOne } from "../../components/containers/servicesPage/sec
 function ServicesPage() {
   return (
     <PageLayout>
-      <ServicesSectionOne />
+      <ServicesSectionOne className={"mb-6"} />
     </PageLayout>
   );
 }

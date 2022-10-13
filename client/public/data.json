@@ -6,7 +6,8 @@
       "pageLink": "/about",
       "type": "text"
     },
-    { "name": "Tjenester",
+    {
+      "name": "Tjenester",
       "pageLink": "/services",
       "type": "text"
     },
@@ -15,12 +16,25 @@
       "pageLink": "/prices",
       "type": "text",
       "items": [
-        { "name": "Individuell", "pageLink": "/prices#individual-container", "type": "text" },
-        { "name": "Familie", "pageLink": "/prices#family-container", "type": "text" },
-        { "name": "Arbeidsplass", "pageLink": "/prices#workplace-container", "type": "text" }
+        {
+          "name": "Individuell",
+          "pageLink": "/prices#individual-container",
+          "type": "text"
+        },
+        {
+          "name": "Familie",
+          "pageLink": "/prices#family-container",
+          "type": "text"
+        },
+        {
+          "name": "Arbeidsplass",
+          "pageLink": "/prices#workplace-container",
+          "type": "text"
+        }
       ]
     },
-    { "name": "Ta en prat",
+    {
+      "name": "Ta en prat",
       "pageLink": "/contact",
       "type": "button"
     }
@@ -37,26 +51,6 @@
     {
       "text": "+47 123 45 678",
       "icon": "phone"
-    }
-  ],
-  "services": [
-    {
-      "title": "Individuell",
-      "about": "Lorem ipsum",
-      "list": ["Punkt", "Punkt", "Punkt", "Punkt"],
-      "pageLink": "/services"
-    },
-    {
-      "title": "Familie",
-      "about": "Lorem ipsum",
-      "list": ["Punkt", "Punkt", "Punkt", "Punkt", "Punkt", "Punkt"],
-      "pageLink": "/services"
-    },
-    {
-      "title": "Arbeidsplass",
-      "about": "Lorem ipsum",
-      "list": ["Punkt", "Punkt", "Punkt", "Punkt"],
-      "pageLink": "/services"
     }
   ],
   "homePage": {
@@ -208,7 +202,7 @@
       "headline1": {
         "text": "Profesjonell bakgrunn og kvalifikasjoner"
       },
-      "paragraphs":[
+      "paragraphs": [
         {
           "headline": {
             "text": "Utdanning og arbeidserfaring"
@@ -228,6 +222,120 @@
           ]
         }
       ]
+    }
+  },
+  "servicesPage": {
+    "categories": [
+      {
+        "title": "Individuell",
+        "about": "Lorem ipsum",
+        "list": [
+          "Punkt",
+          "Punkt",
+          "Punkt",
+          "Punkt"
+        ],
+        "pageLink": "/services"
+      },
+      {
+        "title": "Familie",
+        "about": "Lorem ipsum",
+        "list": [
+          "Punkt",
+          "Punkt",
+          "Punkt",
+          "Punkt",
+          "Punkt",
+          "Punkt"
+        ],
+        "pageLink": "/services"
+      },
+      {
+        "title": "Arbeidsplass",
+        "about": "Lorem ipsum",
+        "list": [
+          "Punkt",
+          "Punkt",
+          "Punkt",
+          "Punkt"
+        ],
+        "pageLink": "/services"
+      }
+    ],
+    "services": [
+      {
+        "title": "Atferdsendring",
+        "about": "Lorem ipsum",
+        "pageLink": "/services",
+        "image": {
+          "description": "Atferdsendring",
+          "width": "500px",
+          "widthMobile": "300px"
+        }
+      },
+      {
+        "title": "Kropps- og triggerpunktterapi",
+        "about": "Lorem ipsum",
+        "pageLink": "/services",
+        "image": {
+          "description": "Kropps- og triggerpunktterapi",
+          "width": "500px",
+          "widthMobile": "300px"
+        }
+      },
+      {
+        "title": "Stress- og livsstilmestring",
+        "about": "Lorem ipsum",
+        "pageLink": "/services",
+        "image": {
+          "description": "Stress- og livsstilmestring",
+          "width": "500px",
+          "widthMobile": "300px"
+        }
+      },
+      {
+        "title": "Barne-og familierådgivning",
+        "about": "Lorem ipsum",
+        "pageLink": "/services",
+        "image": {
+          "description": "Barne-og familierådgivning",
+          "width": "500px",
+          "widthMobile": "300px"
+        }
+      },
+      {
+        "title": "Organisasjonspsykologi",
+        "about": "Lorem ipsum",
+        "pageLink": "/services",
+        "image": {
+          "description": "Organisasjonspsykologi",
+          "width": "500px",
+          "widthMobile": "300px"
+        }
+      },
+      {
+        "title": "Fremming av fjennomføringsevne",
+        "about": "Lorem ipsum",
+        "pageLink": "/services",
+        "image": {
+          "description": "Fremming av fjennomføringsevne",
+          "width": "500px",
+          "widthMobile": "300px"
+        }
+      }
+    ],
+    "section1": {
+      "line1": {
+        "text": "Terapi tjenester"
+      },
+      "line2": {
+        "text": "INDIVIDUELL, FAMILIE, OG ARBEIDSPLASS"
+      },
+      "image1": {
+        "description": "To personer som har samtaleterapi.",
+        "width": "500px",
+        "widthMobile": "300px"
+      }
     }
   }
 }

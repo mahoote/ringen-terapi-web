@@ -107,13 +107,13 @@ function MainSectionThreeService(props) {
 }
 
 function MainSectionThreeServices() {
-  const services = data.services;
+  const categories = data.servicesPage.categories;
 
   return (
     <CenterStyled
       content={
         <div className={"columns is-multiline is-centered is-vcentered"}>
-          {services.map((service, i) => (
+          {categories.map((service, i) => (
             <MainSectionThreeServiceStyled key={i} i={i} service={service} />
           ))}
           <div className={" column is-4 my-3 ml-5 is-hidden-mobile "}>
