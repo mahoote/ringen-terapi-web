@@ -4,6 +4,7 @@ import { HomePageStyled } from "./pages/homePage/homePage.style";
 import { ErrorPage } from "./pages/errorPage/errorPage";
 import { ContactPage } from "./pages/contactPage/contactPage";
 import { AboutPage } from "./pages/aboutPage/aboutPage";
+import { ServicesPage } from "./pages/servicesPage/servicesPage";
 
 const ScrollToTop = (props) => {
   const location = useLocation();
@@ -24,6 +25,7 @@ export function App() {
           <Route path={"/"} element={<HomePageStyled />} />
           <Route path={"/contact"} element={<ContactPage />} />
           <Route path={"/about"} element={<AboutPage />} />
+          <Route path={"/services"} element={<ServicesPage />} />
           <Route path={"/*"} element={<ErrorPage />} />
         </Routes>
       </ScrollToTop>
