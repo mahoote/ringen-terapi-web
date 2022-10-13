@@ -50,7 +50,6 @@ function Footer(props) {
           linkTo={"https://github.com/mahoote?tab=repositories"}
           text={"Nettside av Martin Teigen"}
         />
-        <TextStyled text={"Foto av Google"} />
       </div>
     );
   }
@@ -75,7 +74,6 @@ function Footer(props) {
           linkTo={"https://github.com/mahoote?tab=repositories"}
           text={"Nettside av Martin Teigen"}
         />
-        <TextStyled text={"Foto av Google"} />
       </div>
     );
   }
