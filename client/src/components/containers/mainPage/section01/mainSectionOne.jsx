@@ -1,16 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { TextStyled } from "../../../text/text.style";
-import { CenterStyled } from "../../center/center.style";
 import {
   MainSectionOneAboutStyled,
   MainSectionOneHeadlineStyled,
 } from "./mainSectionOne.style";
 import { standardColors } from "../../../../palettes/standardColors.style";
-import { BorderImageStyled } from "../../../images/borderImage/borderImage.style";
-import { BorderImagesStyled } from "../../../images/borderImages/borderImages.style";
-import { size } from "../../../../sizes/screenSize.style";
-import { useResize } from "../../../../hooks/screenDetection";
-import { Loader } from "../../loader/loader";
 import {
   desktopBig,
   desktopSmall,
@@ -23,6 +17,7 @@ import { ButtonStyled } from "../../../button/button.style";
 
 import data from "../../../../../public/data.json";
 import { Link } from "react-router-dom";
+import { ImageTextSection } from "../../imageTextSection/imageTextSection";
 
 const images = [
   {
@@ -40,6 +35,7 @@ const images = [
     alt: data.homePage.section1.image2.description,
     width: data.homePage.section1.image2.width,
     widthMobile: data.homePage.section1.image2.widthMobile,
+    backgroundColor: standardColors.brown3,
     offsetX: "3em",
     offsetY: "-3em",
     offsetXMobile: "2em",
@@ -122,97 +118,15 @@ function MainSectionOneHeadline(props) {
   );
 }
 
-function MainColumnsDesktopImages() {
-  return (
-    <>
-      <Loader
-        className={" column is-5 my-5 "}
-        content={
-          <CenterStyled
-            content={
-              <BorderImageStyled
-                src={images[0].src}
-                alt={images[0].alt}
-                backgroundColor={standardColors.blue1}
-                width={images[0].width}
-                padding={"1em"}
-                offsetY={images[0].offsetY}
-                offsetX={images[0].offsetX}
-              />
-            }
-          />
-        }
-      />
-
-      <Loader
-        className={" column is-5 my-5 "}
-        content={
-          <CenterStyled
-            content={
-              <BorderImageStyled
-                src={images[1].src}
-                alt={images[1].alt}
-                backgroundColor={standardColors.brown3}
-                width={images[1].width}
-                padding={"1em"}
-                offsetY={images[1].offsetY}
-                offsetX={images[1].offsetX}
-              />
-            }
-          />
-        }
-      />
-    </>
-  );
-}
-
 function MainSectionOne(props) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  function handleResize() {
-    if (window.innerWidth >= size.tablet) {
-      setIsMobile(false);
-    } else {
-      setIsMobile(true);
-    }
-  }
-  useResize(handleResize);
-
   return (
-    <div
-      className={
-        props.className + " columns is-centered is-vcentered is-multiline mb-0"
-      }
-    >
-      <Loader
-        className={" column is-5 my-5 "}
-        content={<CenterStyled content={<MainSectionOneHeadlineStyled />} />}
-      />
-
-      {isMobile ? (
-        <Loader
-          className={" column is-12 my-6 "}
-          content={
-            <CenterStyled
-              content={
-                <BorderImagesStyled
-                  images={images}
-                  backgroundColor={standardColors.blue1}
-                  height={"500px"}
-                />
-              }
-            />
-          }
-        />
-      ) : (
-        <MainColumnsDesktopImages />
-      )}
-
-      <Loader
-        className={" column is-5 my-5 "}
-        content={<CenterStyled content={<MainSectionOneAboutStyled />} />}
-      />
-    </div>
+    <ImageTextSection
+      className={props.className}
+      borderImagesHeight={"500px"}
+      textContentFirst={<MainSectionOneHeadlineStyled />}
+      images={[images[0], images[1]]}
+      textContentSecond={<MainSectionOneAboutStyled />}
+    />
   );
 }
 

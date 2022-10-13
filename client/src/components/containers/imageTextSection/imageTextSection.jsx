@@ -6,6 +6,7 @@ import { CenterStyled } from "../center/center.style";
 import { useState } from "react";
 import { BorderImagesStyled } from "../../images/borderImages/borderImages.style";
 import { BorderImageStyled } from "../../images/borderImage/borderImage.style";
+import { standardColors } from "../../../palettes/standardColors.style";
 
 function CenteredLoader(props) {
   const { textIndex, images } = props;
@@ -29,30 +30,35 @@ function CenteredLoader(props) {
 }
 
 function ImageTextSectionImages(props) {
-  const images = props.images;
+  const { images } = props;
 
   return (
     <>
-      {images.map((image, i) => (
-        <CenteredLoader key={i}>
-          <BorderImageStyled
-            src={image.src}
-            alt={image.alt}
-            backgroundColor={image.backgroundColor}
-            width={image.width}
-            padding={"1em"}
-            offsetY={image.offsetY}
-            offsetX={image.offsetX}
-          />
-        </CenteredLoader>
-      ))}
+      {images.map((image, i) => {
+        const backgroundColor = image.backgroundColor || standardColors.blue1;
+
+        return (
+          <CenteredLoader key={i}>
+            <BorderImageStyled
+              src={image.src}
+              alt={image.alt}
+              backgroundColor={backgroundColor}
+              width={image.width}
+              padding={"1em"}
+              offsetY={image.offsetY}
+              offsetX={image.offsetX}
+            />
+          </CenteredLoader>
+        );
+      })}
     </>
   );
 }
 
 function ImageTextSection(props) {
   const [isMobile, setIsMobile] = useState(false);
-  const { images } = props;
+  const { images, borderImagesHeight } = props;
+  const backgroundColor = images[0].backgroundColor || standardColors.blue1;
 
   function handleResize() {
     if (window.innerWidth >= size.tablet) {
@@ -78,9 +84,10 @@ function ImageTextSection(props) {
             <CenterStyled
               content={
                 <BorderImagesStyled
+                  className={" my-5 "}
                   images={images}
-                  backgroundColor={images[0].backgroundColor}
-                  height={"500px"}
+                  backgroundColor={backgroundColor}
+                  height={borderImagesHeight}
                 />
               }
             />
