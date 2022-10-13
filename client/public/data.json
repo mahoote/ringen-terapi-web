@@ -337,5 +337,22 @@
         "widthMobile": "300px"
       }
     }
+  },
+  "pricesPage": {
+    "section1": {
+      "line1": {
+        "text": "Priser"
+      },
+      "prices": [
+        {
+          "service": {
+            "text": "Atferdsendring"
+          },
+          "value": {
+            "text": "500"
+          }
+        }
+      ]
+    }
   }
 }

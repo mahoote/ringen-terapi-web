@@ -111,4 +111,5 @@ export {
   AboutSectionTwo,
   AboutSectionTwoContent,
   AboutSectionTwoParagraphItem,
+  AboutSectionTwoParagraph,
 };
