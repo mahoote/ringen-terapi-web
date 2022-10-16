@@ -213,7 +213,7 @@
   "servicesPage": {
     "categories": [
       {
-        "title": "Familie- rådgivning",
+        "title": "Familie-rådgivning",
         "about": "Lorem ipsum",
         "list": [
           "Punkt",
@@ -223,7 +223,7 @@
         ],
         "pageLink": "/services"
       },{
-        "title": "Organisasjons- psykologi",
+        "title": "Organisasjons-psykologi",
         "about": "Lorem ipsum",
         "list": [
           "Punkt",
