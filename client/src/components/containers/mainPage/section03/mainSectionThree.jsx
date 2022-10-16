@@ -116,7 +116,8 @@ function MainSectionThreeServices() {
           {categories.map((service, i) => (
             <MainSectionThreeServiceStyled key={i} i={i} service={service} />
           ))}
-          <div className={" column is-4 my-3 ml-5 is-hidden-mobile "}>
+          {/* Does currently not display at all. Remove 'is-hidden' to show. */}
+          <div className={" column is-4 my-3 ml-5 is-hidden "}>
             <Loader
               content={
                 <CenterStyled

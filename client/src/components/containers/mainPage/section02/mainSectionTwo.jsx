@@ -1,6 +1,12 @@
 import { TextStyled } from "../../../text/text.style";
 import React, { useEffect, useRef, useState } from "react";
-import { desktopBig, mobileBig, tabletBig } from "../../../globals/fontSizes";
+import {
+  desktopBig,
+  desktopSmall,
+  mobileBig,
+  tabletBig,
+  tabletSmall,
+} from "../../../globals/fontSizes";
 import { MainSectionTwoTextStyled } from "./mainSectionTwo.style";
 import { useGetScreenDistance } from "../../../../hooks/screenDetection";
 import data from "../../../../../public/data.json";
@@ -23,9 +29,12 @@ function MainSectionTwoText(props) {
         className={"is-hidden-tablet has-text-centered"}
         textWeight={"bold"}
         text={data.homePage.section2.line.text}
-        sizeDesktop={desktopBig}
-        sizeTablet={tabletBig}
-        sizeMobile={mobileBig}
+        sizeDesktop={desktopSmall}
+        sizeTablet={tabletSmall}
+        sizeMobile={desktopSmall}
+        highlightPosStart={data.homePage.section2.line.highlightPosStart}
+        highlightPosEnd={data.homePage.section2.line.highlightPosEnd}
+        highlightTextWeight={"light"}
       />
     </div>
   );

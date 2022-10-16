@@ -24,7 +24,15 @@ function CenteredLoader(props) {
   return (
     <Loader
       className={columnSize + " column my-5 "}
-      content={<CenterStyled content={props.children} />}
+      content={
+        <div>
+          <CenterStyled
+            className={"is-hidden-mobile"}
+            content={props.children}
+          />
+          <div className={"is-hidden-tablet mx-5"}>{props.children}</div>
+        </div>
+      }
     />
   );
 }

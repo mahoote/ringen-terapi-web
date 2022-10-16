@@ -72,9 +72,9 @@
     },
     "section2": {
       "line": {
-        "text": "Med bakgrunn i atferds-og organisasjonspsykologi, kompleksitetsteori, pedagogikk, kunst-og kroppsterapi, behandler RingenTerapi tanker, kropp og det sosiale neverket som ett.",
-        "highlightPosStart": 0,
-        "highlightPosEnd": 0
+        "text": "Med bakgrunn i atferds- og organisasjonspsykologi, kompleksitetsteori, pedagogikk, kunst- og kroppsterapi, behandler RingenTerapi tanker, kropp og det sosiale neverket som ett.",
+        "highlightPosStart": 14,
+        "highlightPosEnd": 21
       }
     },
     "section3": {
@@ -213,7 +213,17 @@
   "servicesPage": {
     "categories": [
       {
-        "title": "Familierådgivning",
+        "title": "Familie- rådgivning",
+        "about": "Lorem ipsum",
+        "list": [
+          "Punkt",
+          "Punkt",
+          "Punkt",
+          "Punkt"
+        ],
+        "pageLink": "/services"
+      },{
+        "title": "Organisasjons- psykologi",
         "about": "Lorem ipsum",
         "list": [
           "Punkt",
