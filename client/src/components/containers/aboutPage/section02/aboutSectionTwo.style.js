@@ -16,7 +16,7 @@ const AboutSectionTwoContentStyled = styled(AboutSectionTwoContent)`
 
 const AboutSectionTwoParagraphItemStyled = styled(AboutSectionTwoParagraphItem)`
   @media screen and ${device.tablet} {
-    width: 50%;
+    width: 60%;
   }
 `;
 

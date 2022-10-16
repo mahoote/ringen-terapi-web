@@ -78,22 +78,22 @@ function MainSectionOneHeadline(props) {
     <div className={props.className}>
       <TextStyled
         text={data.homePage.section1.heading.line1.text}
-        sizeDesktop={desktopSmall}
-        sizeTablet={tabletSmall}
-        sizeMobile={mobileSmall}
-      />
-      <TextStyled
-        className={"my-5"}
-        text={data.homePage.section1.heading.line2.text}
         sizeDesktop={desktopBig}
         sizeTablet={tabletBig}
         sizeMobile={mobileBig}
         textWeight={"bold"}
         highlightPosStart={
-          data.homePage.section1.heading.line2.highlightPosStart
+          data.homePage.section1.heading.line1.highlightPosStart
         }
-        highlightPosEnd={data.homePage.section1.heading.line2.highlightPosEnd}
+        highlightPosEnd={data.homePage.section1.heading.line1.highlightPosEnd}
         highlightColor={standardColors.blue1}
+      />
+      <TextStyled
+        className={"my-5"}
+        text={data.homePage.section1.heading.line2.text}
+        sizeDesktop={desktopSmall}
+        sizeTablet={tabletSmall}
+        sizeMobile={mobileSmall}
       />
       <TextStyled
         text={data.homePage.section1.heading.line3.text}
@@ -101,6 +101,7 @@ function MainSectionOneHeadline(props) {
         sizeTablet={tabletSmall}
         sizeMobile={mobileSmall}
       />
+
       <div className={"is-hidden-tablet"}>
         <hr
           className={"my-6"}

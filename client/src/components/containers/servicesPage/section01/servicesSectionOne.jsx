@@ -38,13 +38,8 @@ function ServicesSectionOneHeadline(props) {
         sizeMobile={mobileBig}
         textWeight={"bold"}
       />
-      <TextStyled
-        className={"my-5"}
-        text={data.servicesPage.section1.line2.text}
-        sizeDesktop={desktopSmall}
-        sizeTablet={tabletSmall}
-        sizeMobile={mobileSmall}
-      />
+      <br />
+      <br />
       {services.map((service, i) => (
         <TextStyled
           key={i}

@@ -14,24 +14,7 @@
     {
       "name": "Priser",
       "pageLink": "/prices",
-      "type": "text",
-      "items": [
-        {
-          "name": "Individuell",
-          "pageLink": "/prices#individual-container",
-          "type": "text"
-        },
-        {
-          "name": "Familie",
-          "pageLink": "/prices#family-container",
-          "type": "text"
-        },
-        {
-          "name": "Arbeidsplass",
-          "pageLink": "/prices#workplace-container",
-          "type": "text"
-        }
-      ]
+      "type": "text"
     },
     {
       "name": "Ta en prat",
@@ -57,12 +40,12 @@
     "section1": {
       "heading": {
         "line1": {
-          "text": "INDIVIDUELL, FAMILIE, OG ARBEIDSPLASS"
+          "text": "Atferdspsykologi",
+          "highlightPosStart": 0,
+          "highlightPosEnd": 0
         },
         "line2": {
-          "text": "Atferdspsykologi psyko-, kropps og relasjonsterapi",
-          "highlightPosStart": 2,
-          "highlightPosEnd": 5
+          "text": "Behandling av depresjon, angst, opplevd ensomhet, utfordringer i arbeid, relasjoner og familie. \n\nOpplevelse av konflikter med omverden, manglende gjennomføringsevne, Smerter i kropp, overvekt eller tvangspreget atferd, krever ofte en bred og helhetlig tilnærming fordi utfordringer ofte henger sammen og påvirkes gjensidig."
         },
         "line3": {
           "text": "I OSLO OG LILLESTRØM"
@@ -89,7 +72,7 @@
     },
     "section2": {
       "line": {
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+        "text": "Med bakgrunn i atferds-og organisasjonspsykologi, kompleksitetsteori, pedagogikk, kunst-og kroppsterapi, behandler RingenTerapi tanker, kropp og det sosiale neverket som ett.",
         "highlightPosStart": 0,
         "highlightPosEnd": 0
       }
@@ -214,17 +197,14 @@
             "text": "Utdanning og arbeidserfaring"
           },
           "list": [
-            "Eksempel data 1",
-            "Mer eksempel data"
-          ]
-        },
-        {
-          "headline": {
-            "text": "Annet"
-          },
-          "list": [
-            "Eksempel 1",
-            "Mer eksempel på annet"
+            "Master i atferdspsykologi og organisasjonspsykologi (Oslo Met).",
+            "Master i læring i komplekse systemer.",
+            "Bachelor i barnehagepedagogikk med barne-og familieveiledning.",
+            "Utdannet kroppsterapeut og kunst.",
+            "Lang erfaring innen veiledning, miljøterapi i psykiatri, organisasjon og ledelse i flere selskap.",
+            "Ernæringsrådgiver for Sunkost og foodiebox.",
+            "Fordypning i varsleres psykiske og fysiske helse.",
+            "Forsket på gjennomføringsevne."
           ]
         }
       ]
@@ -233,7 +213,7 @@
   "servicesPage": {
     "categories": [
       {
-        "title": "Individuell",
+        "title": "Familierådgivning",
         "about": "Lorem ipsum",
         "list": [
           "Punkt",
@@ -244,7 +224,7 @@
         "pageLink": "/services"
       },
       {
-        "title": "Familie",
+        "title": "Psykoterapi",
         "about": "Lorem ipsum",
         "list": [
           "Punkt",
@@ -257,7 +237,7 @@
         "pageLink": "/services"
       },
       {
-        "title": "Arbeidsplass",
+        "title": "Kroppsterapi",
         "about": "Lorem ipsum",
         "list": [
           "Punkt",

@@ -21,15 +21,18 @@ function AboutSectionTwoParagraphItem(props) {
 
   return (
     <div className={props.className}>
-      {list.map((item, i) => (
-        <TextStyled
-          key={i}
-          text={item}
-          sizeDesktop={desktopSmall}
-          sizeTablet={tabletSmall}
-          sizeMobile={mobileSmall}
-        />
-      ))}
+      <ul style={{ listStyleType: "circle" }}>
+        {list.map((item, i) => (
+          <li key={i}>
+            <TextStyled
+              text={item}
+              sizeDesktop={desktopSmall}
+              sizeTablet={tabletSmall}
+              sizeMobile={mobileSmall}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

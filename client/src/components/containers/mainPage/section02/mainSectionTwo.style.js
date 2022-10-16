@@ -31,8 +31,8 @@ const MainSectionTwoTextStyled = styled(MainSectionTwoText)`
     transform: translate(-20%, -50%);
   }
   @media screen and ${device.laptop} {
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 40%;
+    transform: translate(-35%, -50%);
   }
 
   transition: opacity 0.5s;

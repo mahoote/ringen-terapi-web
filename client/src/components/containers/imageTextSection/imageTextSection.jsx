@@ -40,6 +40,7 @@ function ImageTextSectionImages(props) {
         return (
           <CenteredLoader key={i}>
             <BorderImageStyled
+              className={"my-5"}
               src={image.src}
               alt={image.alt}
               backgroundColor={backgroundColor}
