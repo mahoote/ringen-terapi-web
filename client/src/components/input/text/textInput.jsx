@@ -8,6 +8,7 @@ function TextInputTag(props) {
       type={props.type}
       required={props.required}
       placeholder={props.placeholder}
+      name={props.name}
     />
   );
 }

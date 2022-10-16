@@ -146,37 +146,43 @@
           "text": "Fullt navn",
           "required": true,
           "type": "text",
-          "size": 12
+          "size": 12,
+          "name": "from_name"
         },
         {
           "text": "Epost",
           "required": true,
           "type": "email",
-          "size": 6
+          "size": 6,
+          "name": "email_address"
         },
         {
           "text": "Telefon",
           "required": false,
           "type": "tel",
-          "size": 6
+          "size": 6,
+          "name": "tlf_number"
         },
         {
           "text": "Hvordan hørte du om meg?",
           "required": true,
           "type": "text",
-          "size": 12
+          "size": 12,
+          "name": "discovery"
         },
         {
           "text": "Emne",
           "required": true,
           "type": "text",
-          "size": 12
+          "size": 12,
+          "name": "subject"
         },
         {
           "text": "Hvordan kan jeg hjelpe?",
           "required": true,
           "type": "textarea",
-          "size": 12
+          "size": 12,
+          "name": "message"
         }
       ]
     }

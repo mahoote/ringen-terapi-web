@@ -8,7 +8,7 @@ import {
   tabletBig,
   tabletSmall,
 } from "../../../globals/fontSizes";
-import React from "react";
+import React, { useRef } from "react";
 import { CenterStyled } from "../../center/center.style";
 import { TextInput } from "../../../input/text/textInput";
 import {
@@ -19,6 +19,7 @@ import { TextAreaInput } from "../../../input/textarea/textAreaInput";
 import { ButtonStyled } from "../../../button/button.style";
 import { useNavigate } from "react-router-dom";
 import { Loader } from "../../loader/loader";
+import * as emailjs from "@emailjs/browser";
 
 function Heading() {
   return (
@@ -54,6 +55,7 @@ function FormInput(props) {
         className={" column " + sizeString}
         required={required}
         placeholder={props.value.text + requiredString}
+        name={props.value.name}
       />
     );
   }
@@ -64,6 +66,7 @@ function FormInput(props) {
       type={type}
       required={required}
       placeholder={props.value.text + requiredString}
+      name={props.value.name}
     />
   );
 }
@@ -72,14 +75,34 @@ function FormInputs(props) {
   const navigate = useNavigate();
   const formValues = data.contactPage.contactForm.formValues;
 
+  const formRef = useRef();
+
   function handleSubmit(e) {
     e.preventDefault();
     console.log("Send");
+
+    emailjs
+      .sendForm(
+        "service_tlzgovp",
+        "template_cqz1n4t",
+        formRef.current,
+        "qPC4UbG5RGcXmMl8v"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+
     navigate("/");
   }
 
   return (
     <form
+      ref={formRef}
       className={
         props.className + " columns is-centered is-multiline has-text-centered "
       }
