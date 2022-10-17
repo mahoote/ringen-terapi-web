@@ -32,7 +32,7 @@
       "icon": "email"
     },
     {
-      "text": "+47 123 45 678",
+      "text": "+47 926 36 601",
       "icon": "phone"
     }
   ],
@@ -173,7 +173,7 @@
   "aboutPage": {
     "section1": {
       "headline1": {
-        "text": "Lin Ruud [GRAD]"
+        "text": "Lin Ruud"
       },
       "paragraph1": {
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nLibero id faucibus nisl tincidunt eget nullam. Vestibulum sed arcu non odio euismod lacinia at quis."
@@ -305,16 +305,6 @@
         "pageLink": "/services",
         "image": {
           "description": "Organisasjonspsykologi",
-          "width": "500px",
-          "widthMobile": "300px"
-        }
-      },
-      {
-        "title": "Fremming av fjennomføringsevne",
-        "about": "Lorem ipsum",
-        "pageLink": "/services",
-        "image": {
-          "description": "Fremming av fjennomføringsevne",
           "width": "500px",
           "widthMobile": "300px"
         }
